@@ -43,7 +43,7 @@ export default function Navbar({ scrollY }) {
     <>
       <style>{`
         /* ── Desktop: links visibles, hamburguesa oculto ── */
-        .dsp-desktop-links { display: flex; align-items: center; gap: 28px; }
+        .dsp-desktop-links { display: flex; align-items: center; gap: 32px; }
         .dsp-hamburger     { display: none; }
         .dsp-mobile-menu   { display: none; flex-direction: column; }
 
@@ -61,8 +61,10 @@ export default function Navbar({ scrollY }) {
           font-weight: 500;
           color: #94A3B8;
           text-decoration: none;
-          padding: 10px 12px;
+          padding: 12px 14px;
           border-radius: 8px;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
           transition: color 0.2s ease, background 0.2s ease;
         }
         .dsp-mobile-link:hover {
@@ -73,13 +75,31 @@ export default function Navbar({ scrollY }) {
         /* Hover desktop links */
         .dsp-desktop-link {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
           color: #94A3B8;
           text-decoration: none;
-          transition: color 0.2s ease;
+          padding: 12px 14px;
+          border-radius: 8px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
         .dsp-desktop-link:hover { color: #60A5FA; }
+        
+        /* Contacto button style */
+        .dsp-desktop-link.is-cta {
+          color: #60A5FA;
+          border: 1.5px solid rgba(96,165,250,0.5);
+          padding: 12px 18px;
+          border-radius: 8px;
+          background: rgba(96,165,250,0.08);
+        }
+        .dsp-desktop-link.is-cta:hover {
+          color: #38BDF8;
+          border-color: rgba(56,189,248,0.7);
+          background: rgba(56,189,248,0.14);
+        }
       `}</style>
 
       <nav style={{
@@ -95,8 +115,14 @@ export default function Navbar({ scrollY }) {
 
           {/* ── Desktop links ── */}
           <div className="dsp-desktop-links">
-            {NAV_LINKS.map(({ label, href }) => (
-              <a key={label} href={href} className="dsp-desktop-link">{label}</a>
+            {NAV_LINKS.map(({ label, href }, idx) => (
+              <a
+                key={label}
+                href={href}
+                className={`dsp-desktop-link${idx === NAV_LINKS.length - 1 ? " is-cta" : ""}`}
+              >
+                {label}
+              </a>
             ))}
           </div>
 
@@ -128,12 +154,18 @@ export default function Navbar({ scrollY }) {
           style={{ gap:4, paddingBottom:20, paddingTop:8,
             borderTop:"1px solid rgba(59,130,246,0.15)" }}
         >
-          {NAV_LINKS.map(({ label, href }) => (
+          {NAV_LINKS.map(({ label, href }, idx) => (
             <a
               key={label}
               href={href}
-              className="dsp-mobile-link"
+              className={`dsp-mobile-link${idx === NAV_LINKS.length - 1 ? " is-cta" : ""}`}
               onClick={() => setOpen(false)}
+              style={idx === NAV_LINKS.length - 1 ? {
+                color: "#60A5FA",
+                border: "1.5px solid rgba(96,165,250,0.4)",
+                background: "rgba(96,165,250,0.06)",
+                marginTop: "8px",
+              } : {}}
             >
               {label}
             </a>

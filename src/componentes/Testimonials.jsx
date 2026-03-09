@@ -17,14 +17,6 @@ function TestimonialCard({ testimonial, index, visible }) {
         transition: `opacity 0.7s ease ${index * 0.15}s, transform 0.7s ease ${index * 0.15}s`,
       }}
     >
-      {/* Comilla decorativa */}
-      <div
-        className="text-5xl leading-none mb-4 font-serif opacity-40 select-none"
-        style={{ color: "#6C63FF" }}
-      >
-        "
-      </div>
-
       {/* Texto */}
       <p className="font-body text-textSub text-[15px] leading-relaxed mb-6">
         {testimonial.text}
