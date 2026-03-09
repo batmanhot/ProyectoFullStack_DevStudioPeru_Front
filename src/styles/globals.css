@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset & Base ───────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ══════════════════════════════════════════════════════
+   MALLA CIRCUITO — fondo global de toda la web
+   Tres capas fijas sobre el body:
+   1. Grilla cuadrada fina (40×40 px)
+   2. Nodos en intersecciones cada 120 px
+   3. Viñeta radial para suavizar bordes
+   Las secciones con su propio fondo simplemente
+   tapan la malla de forma natural.
+══════════════════════════════════════════════════════ */
+body {
+  background-color: #0A0E23;
+  color: #E2E8F0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+
+  /* Capa 1 — grilla cuadrada */
+  background-image: 
+     linear-gradient(rgba(159,130,246,0.07) 1px, transparent 1px), 
+     linear-gradient(90deg, rgba(159,130,246,0.07) 1px, transparent 1px); 
+  background-size: 40px 40px; 
+  background-attachment: fixed;
+}
+
+/* Capa 2 — nodos en intersecciones cada 120 px */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(56,189,248,0.16) 1.5px, transparent 1.5px);
+  background-size: 120px 120px;
+  background-attachment: fixed;
+}
+
+/* Capa 3 — viñeta radial para que el centro respire */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 120% 80% at 50% 40%,
+    transparent 35%,
+    rgba(10,14,35,0.55) 100%
+  );
+}
+
+/* Todo el contenido queda sobre la malla */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0E23; }
+::-webkit-scrollbar-thumb { background: #3B82F6; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #60A5FA; }
+
+/* ── Selection ──────────────────────────────────────── */
+::selection {
+  background: rgba(59,130,246,0.35);
+  color: #E2E8F0;
+}
+
+/* ── Animations ─────────────────────────────────────── */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(30px, -30px); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(-20px, 20px); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Utility classes ────────────────────────────────── */
+.animate-float1    { animation: float1 8s ease-in-out infinite; }
+.animate-float2    { animation: float2 10s ease-in-out infinite; }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Gradient text ──────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA, #38BDF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card hover ─────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+              border-color 0.3s ease, background 0.3s ease;
+}
+.card-hover:hover { transform: translateY(-6px); }
+
+/* ── Input reset ────────────────────────────────────── */
+input, textarea { outline: none; }
