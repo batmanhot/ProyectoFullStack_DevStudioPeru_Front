@@ -22,15 +22,13 @@ function TechCard({ tech, index, visible }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Ícono con iniciales */}
-      <div
-        className="w-11 h-11 rounded-xl mx-auto mb-2.5 flex items-center justify-center font-display font-extrabold text-sm"
-        style={{
-          background: tech.color + "22",
-          color: tech.color,
-        }}
-      >
-        {tech.name.slice(0, 2)}
+      {/* Ícono - Imagen */}
+      <div className="w-11 h-11 rounded-xl mx-auto mb-2.5 flex items-center justify-center">
+        <img
+          src={new URL(`../assets/${tech.icon}`, import.meta.url).href}
+          alt={tech.name}
+          className="w-full h-full object-contain"
+        />
       </div>
 
       <span className="font-display text-[12px] font-semibold text-textSub">

@@ -72,6 +72,12 @@ export default function Navbar({ scrollY }) {
           background: rgba(59,130,246,0.08);
         }
 
+        /* Mobile menu - opaco cuando está abierto */
+        .dsp-mobile-menu {
+          background: rgba(10,14,35,0.96);
+          backdrop-filter: blur(18px);
+        }
+
         /* Hover desktop links */
         .dsp-desktop-link {
           font-family: 'Space Grotesk', sans-serif;

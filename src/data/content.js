@@ -76,18 +76,27 @@ export const SERVICES = [
 ];
 
 export const TECHNOLOGIES = [
-  { name: "React",      color: "#61DAFB" },
-  { name: "Node.js",    color: "#68A063" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "Python",     color: "#FFD43B" },
-  { name: "PostgreSQL", color: "#336791" },
-  { name: "MongoDB",    color: "#47A248" },
-  { name: "Docker",     color: "#2496ED" },
-  { name: "AWS",        color: "#FF9900" },
-  { name: "Next.js",    color: "#E2E8F0" },
-  { name: "Flutter",    color: "#54C5F8" },
-  { name: "GraphQL",    color: "#E10098" },
-  { name: "Redis",      color: "#DC382D" },
+  { name: "React",      color: "#61DAFB", icon: "ico-react_transparent.png"},
+  { name: "Node.js",    color: "#68A063", icon: "ico-javascript_transparent.png"},
+  { name: "TypeScript", color: "#3178C6", icon: "ico-typescript_transparent.png"},
+  { name: "Python",     color: "#FFD43B", icon: "ico-python_transparent.png"},
+  { name: "PostgreSQL", color: "#336791", icon: "ico-postgress_transparent.png" },
+  { name: "MongoDB",    color: "#47A248", icon: "ico-mongodb_transparent.png"},
+  { name: "Docker",     color: "#2496ED", icon: "ico-docker_transparent.png"},
+  { name: "AWS",        color: "#FF9900", icon: "ico-aws_transparent.png"},
+  { name: "Next.js",    color: "#E2E8F0", icon: "ico-next_transparent.png"},
+  { name: "Firebase",   color: "#FFA500", icon: "ico-firebase_transparent.png"},
+  { name: "GraphQL",    color: "#E10098", icon: "ico-graphql_transparent.png"},
+  { name: "NestJS",     color: "#EA2845", icon: "ico-nest_transparent.png"},
+  { name: "Django",     color: "#092E20", icon: "ico-django_transparent.png"},
+  { name: "JavaScript", color: "#F7DF1E", icon: "ico-javascript2_transparent.png"},
+  { name: "Azure",      color: "#0078D4", icon: "ico-azure_transparent.png"},
+  { name: "Google Cloud", color: "#4285F4", icon: "ico-googlecloud_transparent.png"},
+  { name: "Windows Server", color: "#0078D4", icon: "ico-windows_server_transparent.png"},
+  { name: "Power BI",   color: "#F2C811", icon: "ico-powerbi_transparent.png"},
+  { name: "UiPath",     color: "#FF6B35", icon: "ico-uipath_transparent.png"},
+  { name: "Tailwind CSS", color: "#38BDF8", icon: "ico-tailwind_transparent.png"},
+  { name: "ChatGPT", color: "#38BDF8", icon: "ico-chatgpt_transparent.png" },
 ];
 
 export const PROJECTS = [
@@ -170,6 +179,6 @@ export const CONTACT_INFO = [
 
 export const SOCIAL_LINKS = [
   { label: "LinkedIn",  href: "https://linkedin.com",  color: "#0A66C2" },
-  { label: "Facebook",  href: "https://facebook.com",  color: "#1877F2" },
+  { label: "Facebook",  href: "https://www.facebook.com/profile.php?id=61583754606728",  color: "#1877F2" },
   { label: "Instagram", href: "https://instagram.com", color: "#E1306C" },
 ];

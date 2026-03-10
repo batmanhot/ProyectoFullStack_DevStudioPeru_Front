@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Átomo Tecnológico - DevStudio</title>
+  <style>
+    :root {
+      --r1: 180px; /* Radio órbita 1 */
+      --r2: 260px; /* Radio órbita 2 */
+      --r3: 340px; /* Radio órbita 3 */
+      --r4: 420px; /* Radio órbita 4 - Elíptica */
+    }
+
+    body {
+      background: radial-gradient(ellipse at center, #0a0e1a 0%, #05070a 50%, #000000 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Fondo de Estrellas */
+    .stars-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    .star.small {
+      width: 1px;
+      height: 1px;
+      animation-duration: 2s;
+      animation-delay: -1s;
+    }
+
+    .star.medium {
+      width: 2px;
+      height: 2px;
+      animation-duration: 4s;
+      animation-delay: -2s;
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+
+    .star.large {
+      width: 3px;
+      height: 3px;
+      animation-duration: 5s;
+      animation-delay: -3s;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    }
+
+    .star.moving {
+      animation: twinkle 3s infinite ease-in-out, move-star 20s linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    @keyframes move-star {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-10px) rotate(360deg); }
+    }
+
+    /* Nebulosa de fondo */
+    .nebula {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.06) 0%, transparent 50%);
+      animation: nebula-drift 30s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes nebula-drift {
+      0% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+      100% { transform: translateX(20px) translateY(-10px) rotate(1deg); }
+    }
+
+    .universo {
+      position: relative;
+      width: 1000px;
+      height: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1500px;
+    }
+
+    .titulo {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #ffffff;
+      z-index: 100;
+    }
+
+    .titulo h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin: 0;
+      background: linear-gradient(45deg, #6C63FF, #00D4FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .titulo p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 10px 0 0 0;
+    }
+
+    /* Núcleo Central */
+    .nucleo {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      z-index: 10;
+      filter: drop-shadow(0 0 40px rgba(108, 99, 255, 0.6));
+      animation: nucleo-pulse 3s ease-in-out infinite;
+    }
+
+    .nucleo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      background: rgba(108, 99, 255, 0.1);
+      padding: 15px;
+    }
+
+    @keyframes nucleo-pulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 40px rgba(108, 99, 255, 0.6)); }
+      50% { transform: scale(1.05); filter: drop-shadow(0 0 50px rgba(108, 99, 255, 0.8)); }
+    }
+
+    /* Órbitas */
+    .orbita {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      transform-style: preserve-3d;
+      transform: rotateY(var(--ry)) rotateX(var(--rx));
+    }
+
+    .orbita.orbita-1 {
+      width: calc(var(--r1) * 2);
+      height: calc(var(--r1) * 2);
+    }
+
+    .orbita.orbita-2 {
+      width: calc(var(--r2) * 2);
+      height: calc(var(--r2) * 2);
+    }
+
+    .orbita.orbita3 {
+      width: calc(var(--r3) * 2);
+      height: calc(var(--r3) * 2);
+    }
+
+    .orbita.orbita-4 {
+      width: calc(var(--r4) * 2.5);
+      height: calc(var(--r4) * 1.8);
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      transform: rotateY(45deg) rotateX(120deg) rotateZ(-15deg);
+    }
+
+    .orbita.orbita-4 .icon-wrapper {
+      width: 50px;
+      height: 50px;
+      margin: -25px;
+      animation: orbitar-eliptico var(--d) linear infinite;
+      z-index: 15;
+    }
+
+    .orbita.orbita-4 .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      animation: fix var(--d) linear infinite;
+      animation-delay: var(--ad);
+      transition: filter 0.3s ease;
+    }
+
+    /* Contenedor de iconos */
+    .icon-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+      margin: -25px;
+      animation: orbitar var(--d) linear infinite;
+      animation-delay: var(--ad);
+    }
+
+    /* Estela de movimiento */
+    .estela {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to left, rgba(0, 212, 255, 0.9), rgba(108, 99, 255, 0.7), transparent);
+      transform-origin: right center;
+      filter: blur(1px);
+      pointer-events: none;
+      animation: estela-fade var(--d) linear infinite;
+      animation-delay: var(--ad);
+    }
+
+    @keyframes estela-fade {
+      0%, 90% { opacity: 0.8; }
+      100% { opacity: 0; }
+    }
+
+    /* Iconos */
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      animation: fix var(--d) linear infinite;
+      animation-delay: var(--ad);
+      transition: filter 0.3s ease;
+    }
+
+    .logo:hover {
+      filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
+    }
+
+    /* Animaciones */
+    @keyframes orbitar {
+      from { transform: rotate(0deg) translateX(var(--r)) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg); }
+    }
+
+    @keyframes orbitar-eliptico {
+      0% {
+        transform: rotate(0deg) translateX(calc(var(--r) * 1.2)) translateY(0px) rotate(0deg);
+      }
+      25% {
+        transform: rotate(90deg) translateX(calc(var(--r) * 0.8)) translateY(calc(var(--r) * 0.4)) rotate(-90deg);
+      }
+      50% {
+        transform: rotate(180deg) translateX(calc(var(--r) * 1.2)) translateY(0px) rotate(-180deg);
+      }
+      75% {
+        transform: rotate(270deg) translateX(calc(var(--r) * 0.8)) translateY(calc(var(--r) * -0.4)) rotate(-270deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(calc(var(--r) * 1.2)) translateY(0px) rotate(-360deg);
+      }
+    }
+
+    @keyframes fix {
+      from { transform: rotateX(calc(var(--rx) * -1)) rotateY(calc(var(--ry) * -1)) rotate(0deg); }
+      to { transform: rotateX(calc(var(--rx) * -1)) rotateY(calc(var(--ry) * -1)) rotate(360deg); }
+    }
+
+    /* Controles */
+    .controles {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+
+    .btn-control {
+      background: rgba(108, 99, 255, 0.2);
+      border: 1px solid rgba(108, 99, 255, 0.5);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-control:hover {
+      background: rgba(108, 99, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Pausar al hover */
+    .universo:hover .orbita .icon-wrapper {
+      animation-play-state: paused;
+    }
+
+    .universo:hover .orbita .estela {
+      animation-play-state: paused;
+    }
+
+    /* Meteoritos ocasionales */
+    .meteor {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: linear-gradient(45deg, #ffffff, transparent);
+      border-radius: 50%;
+      animation: meteor-fall 3s linear infinite;
+      opacity: 0;
+    }
+
+    .meteor::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 1px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
+      transform: rotate(45deg) translateX(-15px) translateY(0px);
+    }
+
+    @keyframes meteor-fall {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(-100px);
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px));
+      }
+    }
+
+    /* Efecto de lente/vidrio */
+    /* SVG Órbitas */
+    .orbitas-svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 1000px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .orbita-linea {
+      opacity: 0.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 2px rgba(108, 99, 255, 0.8));
+    }
+
+    svg .orbita-grupo {
+      animation: rotar-orbita 40s linear infinite;
+      transform-origin: 500px 500px;
+    }
+
+    svg .orbita-grupo-2 {
+      animation: rotar-orbita 50s linear infinite reverse;
+      transform-origin: 500px 500px;
+    }
+
+    svg .orbita-grupo-3 {
+      animation: rotar-orbita 60s linear infinite;
+      transform-origin: 500px 500px;
+    }
+
+    svg .orbita-grupo-4 {
+      animation: rotar-orbita 70s linear infinite reverse;
+      transform-origin: 500px 500px;
+    }
+
+    @keyframes rotar-orbita {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">
+    <h1>Átomo Tecnológico</h1>
+    <p>DevStudio - Innovación en Movimiento</p>
+  </div>
+
+  <!-- Fondo del Universo -->
+  <div class="nebula"></div>
+  <div class="stars-container" id="stars-container"></div>
+  <div class="meteors-container" id="meteors-container"></div>
+
+  <div class="universo">
+    <!-- SVG Órbitas Animadas -->
+    <svg class="orbitas-svg" viewBox="0 0 1000 1000">
+      <!-- Órbita 1 - Circular -->
+      <g class="orbita-grupo">
+        <ellipse cx="500" cy="500" rx="180" ry="180" fill="none" stroke="rgba(108, 99, 255, 0.3)" stroke-width="1" class="orbita-linea"/>
+      </g>
+
+      <!-- Órbita 2 - Circular -->
+      <g class="orbita-grupo-2">
+        <ellipse cx="500" cy="500" rx="260" ry="260" fill="none" stroke="rgba(108, 99, 255, 0.3)" stroke-width="1" class="orbita-linea"/>
+      </g>
+
+      <!-- Órbita 3 - Circular -->
+      <g class="orbita-grupo-3">
+        <ellipse cx="500" cy="500" rx="340" ry="340" fill="none" stroke="rgba(108, 99, 255, 0.3)" stroke-width="1" class="orbita-linea"/>
+      </g>
+
+      <!-- Órbita 4 - Elíptica Externa -->
+      <g class="orbita-grupo-4">
+        <ellipse cx="500" cy="500" rx="420" ry="300" fill="none" stroke="rgba(108, 99, 255, 0.3)" stroke-width="1.5" class="orbita-linea"/>
+      </g>
+
+      <!-- Líneas de conexión cruzadas que giran -->
+      <g class="orbita-grupo">
+        <line x1="500" y1="320" x2="500" y2="680" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+        <line x1="320" y1="500" x2="680" y2="500" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+      </g>
+
+      <g class="orbita-grupo-2">
+        <line x1="500" y1="240" x2="500" y2="760" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+        <line x1="240" y1="500" x2="760" y2="500" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+      </g>
+
+      <g class="orbita-grupo-3">
+        <line x1="500" y1="160" x2="500" y2="840" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+        <line x1="160" y1="500" x2="840" y2="500" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+      </g>
+
+      <g class="orbita-grupo-4">
+        <line x1="500" y1="200" x2="500" y2="800" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+        <line x1="80" y1="500" x2="920" y2="500" stroke="rgba(108, 99, 255, 0.15)" stroke-width="1"/>
+      </g>
+    </svg>
+
+    <!-- Núcleo Central - React -->
+    <div class="nucleo">
+      <img src="./src/assets/ico-react_transparent.png" alt="React - Núcleo">
+    </div>
+
+    <!-- Órbita 1 - Tecnologías Frontend/Web -->
+    <div class="orbita orbita-1" style="--rx:220deg; --ry:30deg; --d:12s; --r: var(--r1);">
+      <div class="icon-wrapper" style="--ad: 0s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-next_transparent.png" class="logo" alt="Next.js">
+      </div>
+      <div class="icon-wrapper" style="--ad: -2s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-typescript_transparent.png" class="logo" alt="TypeScript">
+      </div>
+      <div class="icon-wrapper" style="--ad: -4s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-javascript2_transparent.png" class="logo" alt="JavaScript">
+      </div>
+      <div class="icon-wrapper" style="--ad: -6s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-firebase_transparent.png" class="logo" alt="Firebase">
+      </div>
+      <div class="icon-wrapper" style="--ad: -8s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-graphql_transparent.png" class="logo" alt="GraphQL">
+      </div>
+      <div class="icon-wrapper" style="--ad: -10s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-nest_transparent.png" class="logo" alt="NestJS">
+      </div>
+    </div>
+
+    <!-- Órbita 2 - Tecnologías Backend/Cloud -->
+    <div class="orbita orbita-2" style="--rx:170deg; --ry:-30deg; --d:16s; --r: var(--r2);">
+      <div class="icon-wrapper" style="--ad: 0s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-javascript_transparent.png" class="logo" alt="Node.js">
+      </div>
+      <div class="icon-wrapper" style="--ad: -2.67s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-python_transparent.png" class="logo" alt="Python">
+      </div>
+      <div class="icon-wrapper" style="--ad: -5.33s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-django_transparent.png" class="logo" alt="Django">
+      </div>
+      <div class="icon-wrapper" style="--ad: -8s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-postgress_transparent.png" class="logo" alt="PostgreSQL">
+      </div>
+      <div class="icon-wrapper" style="--ad: -10.67s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-mongodb_transparent.png" class="logo" alt="MongoDB">
+      </div>
+      <div class="icon-wrapper" style="--ad: -13.33s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-docker_transparent.png" class="logo" alt="Docker">
+      </div>
+    </div>
+
+    <!-- Órbita 3 - Elíptica Externa -->
+    <div class="orbita orbita-3" style="--rx:120deg; --ry:45deg; --d:24s; --r: var(--r3);">
+      <div class="icon-wrapper" style="--ad: 0s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-javascript_transparent.png" class="logo" alt="JavaScript Alt">
+      </div>
+      <div class="icon-wrapper" style="--ad: -3s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-react_transparent.png" class="logo" alt="React">
+      </div>
+      <div class="icon-wrapper" style="--ad: -6s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-node_transparent.png" class="logo" alt="Node.js">
+      </div>
+      <div class="icon-wrapper" style="--ad: -9s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-docker_transparent.png" class="logo" alt="Docker">
+      </div>
+      <div class="icon-wrapper" style="--ad: -12s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-aws_transparent.png" class="logo" alt="AWS">
+      </div>
+      <div class="icon-wrapper" style="--ad: -15s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-n8n_transparent.png" class="logo" alt="N8N">
+      </div>
+      <div class="icon-wrapper" style="--ad: -18s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-firebase_transparent.png" class="logo" alt="Firebase">
+      </div>
+      <div class="icon-wrapper" style="--ad: -21s;">
+        <div class="estela"></div>
+        <img src="./src/assets/ico-mongodb_transparent.png" class="logo" alt="MongoDB">
+      </div>      
+    </div>
+  </div>
+
+  <div class="controles">
+    <button class="btn-control" onclick="toggleAnimation()">⏸️ Pausar/Continuar</button>
+    <button class="btn-control" onclick="changeSpeed(0.5)">🐌 Más Lento</button>
+    <button class="btn-control" onclick="changeSpeed(2)">🐆 Más Rápido</button>
+    <button class="btn-control" onclick="resetSpeed()">🔄 Reset</button>
+  </div>
+
+  <script>
+    let animationSpeed = 1;
+
+    function toggleAnimation() {
+      const wrappers = document.querySelectorAll('.icon-wrapper');
+      const estelas = document.querySelectorAll('.estela');
+      const svgGrupos = document.querySelectorAll('.orbitas-svg [class*="orbita-grupo"]');
+
+      wrappers.forEach(wrapper => {
+        const currentState = wrapper.style.animationPlayState || 'running';
+        wrapper.style.animationPlayState = currentState === 'running' ? 'paused' : 'running';
+      });
+
+      estelas.forEach(estela => {
+        const currentState = estela.style.animationPlayState || 'running';
+        estela.style.animationPlayState = currentState === 'running' ? 'paused' : 'running';
+      });
+
+      svgGrupos.forEach(grupo => {
+        const currentState = grupo.style.animationPlayState || 'running';
+        grupo.style.animationPlayState = currentState === 'running' ? 'paused' : 'running';
+      });
+    }
+
+    function changeSpeed(multiplier) {
+      animationSpeed *= multiplier;
+      const orbitas = document.querySelectorAll('.orbita');
+
+      orbitas.forEach(orbita => {
+        const baseDuration = parseFloat(orbita.style.getPropertyValue('--d'));
+        const newDuration = baseDuration / animationSpeed;
+        orbita.style.setProperty('--d', newDuration + 's');
+
+        // Actualizar animaciones de los hijos
+        const wrappers = orbita.querySelectorAll('.icon-wrapper, .estela');
+        wrappers.forEach(wrapper => {
+          wrapper.style.animationDuration = newDuration + 's';
+        });
+      });
+
+      // Actualizar órbitas SVG
+      updateSVGOrbitSpeed();
+    }
+
+    function resetSpeed() {
+      animationSpeed = 1;
+      location.reload(); // Recarga simple para reset completo
+    }
+
+    // Control de velocidad para órbitas SVG
+    function updateSVGOrbitSpeed() {
+      const svg = document.querySelector('.orbitas-svg');
+      if (svg) {
+        const grupos = svg.querySelectorAll('[class*="orbita-grupo"]');
+        grupos.forEach(grupo => {
+          const classe = grupo.getAttribute('class');
+          let duration;
+          if (classe.includes('orbita-grupo-4')) duration = 70 / animationSpeed;
+          else if (classe.includes('orbita-grupo-3')) duration = 60 / animationSpeed;
+          else if (classe.includes('orbita-grupo-2')) duration = 50 / animationSpeed;
+          else duration = 40 / animationSpeed;
+          
+          grupo.style.animationDuration = duration + 's';
+        });
+      }
+    }
+
+    // Auto-pause on hover
+    document.querySelector('.universo').addEventListener('mouseenter', () => {
+      if (animationSpeed === 1) {
+        document.querySelectorAll('.icon-wrapper, .estela').forEach(el => {
+          el.style.animationPlayState = 'paused';
+        });
+        document.querySelectorAll('.orbitas-svg [class*="orbita-grupo"]').forEach(el => {
+          el.style.animationPlayState = 'paused';
+        });
+      }
+    });
+
+    document.querySelector('.universo').addEventListener('mouseleave', () => {
+      if (animationSpeed === 1) {
+        document.querySelectorAll('.icon-wrapper, .estela').forEach(el => {
+          el.style.animationPlayState = 'running';
+        });
+        document.querySelectorAll('.orbitas-svg [class*="orbita-grupo"]').forEach(el => {
+          el.style.animationPlayState = 'running';
+        });
+      }
+    });
+
+    // Generar estrellas dinámicamente
+    function createStars() {
+      const starsContainer = document.getElementById('stars-container');
+      const numberOfStars = 200;
+
+      for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        const size = Math.random();
+
+        // Determinar el tipo de estrella basado en el tamaño
+        if (size < 0.7) {
+          star.className = 'star small';
+        } else if (size < 0.9) {
+          star.className = 'star medium';
+        } else {
+          star.className = 'star large';
+        }
+
+        // Posición aleatoria
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+
+        // Algunas estrellas se mueven
+        if (Math.random() < 0.1) {
+          star.classList.add('moving');
+        }
+
+        // Delay aleatorio para el parpadeo
+        star.style.animationDelay = Math.random() * 5 + 's';
+
+        starsContainer.appendChild(star);
+      }
+    }
+
+    // Crear meteoritos ocasionalmente
+    function createMeteor() {
+      const meteorsContainer = document.getElementById('meteors-container');
+      const meteor = document.createElement('div');
+      meteor.className = 'meteor';
+
+      // Posición inicial aleatoria (fuera de la pantalla)
+      meteor.style.left = Math.random() * 100 + '%';
+      meteor.style.top = '-10px';
+
+      // Duración aleatoria
+      const duration = 2 + Math.random() * 4;
+      meteor.style.animationDuration = duration + 's';
+      meteor.style.animationDelay = Math.random() * 10 + 's';
+
+      meteorsContainer.appendChild(meteor);
+
+      // Remover el meteorito después de la animación
+      setTimeout(() => {
+        if (meteor.parentNode) {
+          meteor.parentNode.removeChild(meteor);
+        }
+      }, (duration + 1) * 1000);
+    }
+
+    // Crear estrellas al cargar la página
+    createStars();
+
+    // Inicializar control de velocidad SVG
+    updateSVGOrbitSpeed();
+
+    // Crear meteoritos cada cierto tiempo
+    setInterval(createMeteor, 8000); // Un meteorito cada 8 segundos
+
+    // Recrear estrellas al redimensionar (opcional)
+    window.addEventListener('resize', () => {
+      const starsContainer = document.getElementById('stars-container');
+      starsContainer.innerHTML = '';
+      createStars();
+    });
+
+    // Debug: Verificar que todos los elementos se cargaron
+    setTimeout(() => {
+      console.log('Debug - Elementos cargados:');
+      console.log('Órbita 1:', document.querySelector('.orbita-1'));
+      console.log('Órbita 2:', document.querySelector('.orbita-2'));
+      console.log('Órbita 3:', document.querySelector('.orbita-3'));
+      console.log('Órbita 4:', document.querySelector('.orbita-4'));
+      console.log('Iconos en órbita 4:', document.querySelectorAll('.orbita-4 .icon-wrapper').length);
+    }, 1000);
+  </script>
+</body>
+</html>

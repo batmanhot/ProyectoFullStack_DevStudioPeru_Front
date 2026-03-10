@@ -9,7 +9,35 @@ const SERVICES_PILL = ["Arquitectura", "Web", "Móvil", "IA", "Automatizaciones"
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setLoaded(true), 100); return ()=>clearTimeout(t); }, []);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [imageRotation, setImageRotation] = useState({ x: 0, y: 0 });
+
+  useEffect(() => { 
+    const t = setTimeout(() => setLoaded(true), 100); 
+    return ()=>clearTimeout(t); 
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      // Calcular distancia desde el centro (rango: -1 a 1)
+      const x = (e.clientX - centerX) / centerX;
+      const y = (e.clientY - centerY) / centerY;
+      
+      setMousePos({ x, y });
+      
+      // Aplicar rotación suave: máximo 8 grados en cada eje
+      setImageRotation({ 
+        x: y * 8,
+        y: x * -8
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const anim = (delay=0) => ({
     opacity: loaded?1:0,
@@ -147,23 +175,48 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT: Hero image */}
-        <div style={{ ...anim(0.2), display:"flex", justifyContent:"center", alignItems:"center" }}>
-          <div style={{ position:"relative", display:"inline-block" }}>
-            {/* Glow ring */}
+        {/* RIGHT: Hero image with 3D Parallax Effect */}
+        <div style={{ ...anim(0.2), display:"flex", justifyContent:"center", alignItems:"center", perspective:"1000px" }}>
+          <div style={{
+            position:"relative",
+            display:"inline-block",
+            transformStyle:"preserve-3d",
+            transform:`rotateX(${imageRotation.x}deg) rotateY(${imageRotation.y}deg)`,
+            transition:"transform 0.1s ease-out",
+          }}>
+            {/* Glow ring con efecto de movimiento */}
             <div style={{
-              position:"absolute", inset:"-20px", borderRadius:"50%",
+              position:"absolute",
+              inset:"-20px",
+              borderRadius:"50%",
               background:"radial-gradient(circle,rgba(59,130,246,0.25) 0%,transparent 70%)",
               animation:"float1 6s ease-in-out infinite",
+              transform:`translateZ(${-50 + (mousePos.x * 20)}px) translateZ(${-50 + (mousePos.y * 20)}px)`,
             }}/>
+            
+            {/* Capa de profundidad - primer plano */}
+            <div style={{
+              position:"absolute",
+              inset:"-40px",
+              borderRadius:"50%",
+              background:"radial-gradient(circle,rgba(101,108,255,0.08) 0%,transparent 80%)",
+              transform:`translateZ(-30px)`,
+            }}/>
+            
+            {/* Imagen principal con efecto 3D */}
             <img
               src="/logo-hero.png"
               alt="DevStudioPeru Logo"
               style={{
-                width:"clamp(280px,35vw,480px)", height:"auto",
-                objectFit:"contain", position:"relative", zIndex:1,
+                width:"clamp(280px,35vw,480px)",
+                height:"auto",
+                objectFit:"contain",
+                position:"relative",
+                zIndex:1,
                 filter:"drop-shadow(0 0 40px rgba(59,130,246,0.5))",
                 animation:"float2 7s ease-in-out infinite",
+                transform:"translateZ(40px)",
+                willChange:"transform",
               }}
             />
           </div>
