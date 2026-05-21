@@ -7,7 +7,6 @@ import { useScrollY } from "./hooks/useInView";
 
 import Navbar          from "./componentes/Navbar";
 import HeroSection     from "./componentes/HeroSection";
-import AboutSection    from "./componentes/AboutSection";
 import ServicesSection from "./componentes/ServicesSection";
 import TechStack       from "./componentes/TechStack";
 import Portfolio       from "./componentes/Portfolio";
@@ -19,12 +18,11 @@ export default function App() {
   const scrollY = useScrollY();
 
   return (
-    <div style={{ background: "#0F0F1A", minHeight: "100vh" }}>
+    <div style={{ background: "#07091A", minHeight: "100vh" }}>
       <Navbar scrollY={scrollY} />
 
       <main>
         <HeroSection />
-        <AboutSection />
         <ServicesSection />
         <TechStack />
         <Portfolio />

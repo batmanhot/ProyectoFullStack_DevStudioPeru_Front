@@ -78,24 +78,6 @@
       100% { transform: translateY(-10px) rotate(360deg); }
     }
 
-
-    /* 2. Agregar will-change a elementos animados */
-    .icon-wrapper, .estela, .orbita-grupo {
-      will-change: transform;
-    }
-
-    /* 3. Usar transform3d para forzar GPU acceleration */
-    @keyframes orbitar {
-      from { transform: rotate(0deg) translate3d(var(--r), 0, 0) rotate(0deg); }
-      to { transform: rotate(360deg) translate3d(var(--r), 0, 0) rotate(-360deg); }
-    }
-
-    /* 4. Reducir complejidad de sombras */
-    .nucleo {
-      filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.4)); /* menos blur */
-    }
-
-  /* 5. Pausar animaciones fuera de viewport con Intersection Observer */
     /* Nebulosa de fondo */
     .nebula {
       position: fixed;
@@ -571,26 +553,6 @@
         <img src="./src/assets/ico-mongodb_transparent.png" class="logo" alt="MongoDB">
       </div>      
     </div>
-
-    <!-- Órbita 4 - Elíptica Externa -->
-    <div class="orbita orbita-4" style="--rx:120deg; --ry:45deg; --d:32s; --r: var(--r4);">
-      <div class="icon-wrapper" style="--ad: 0s;">
-        <div class="estela"></div>
-        <img src="./src/assets/ico-aws_transparent.png" class="logo" alt="AWS">
-      </div>
-      <div class="icon-wrapper" style="--ad: -8s;">
-        <div class="estela"></div>
-        <img src="./src/assets/ico-docker_transparent.png" class="logo" alt="Docker">
-      </div>
-      <div class="icon-wrapper" style="--ad: -16s;">
-        <div class="estela"></div>
-        <img src="./src/assets/ico-mongodb_transparent.png" class="logo" alt="MongoDB">
-      </div>
-      <div class="icon-wrapper" style="--ad: -24s;">
-        <div class="estela"></div>
-        <img src="./src/assets/ico-firebase_transparent.png" class="logo" alt="Firebase">
-      </div>
-    </div>
   </div>
 
   <div class="controles">
@@ -692,10 +654,8 @@
 
     // Generar estrellas dinámicamente
     function createStars() {
-      const starsContainer = document.getElementById('stars-container');        
-      const numberOfStars = 80; // en lugar de 200
-
-  
+      const starsContainer = document.getElementById('stars-container');
+      const numberOfStars = 200;
 
       for (let i = 0; i < numberOfStars; i++) {
         const star = document.createElement('div');

@@ -5,22 +5,21 @@
 // ─────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
-  { label: "Nosotros",    href: "#nosotros"     },
-  { label: "Servicios",   href: "#servicios"    },
-  { label: "Tecnologías", href: "#tecnologias"  },
-  { label: "Proyectos",   href: "#proyectos"    },
-  { label: "Testimonios", href: "#testimonios"  },
-  { label: "Contacto",    href: "#contacto"     },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Tecnologías", href: "#tecnologias" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Testimonios", href: "#testimonios" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 export const HERO_TAGLINE = "Transformamos tus ideas en soluciones reales.";
 
-export const HERO_BADGE  = "Arquitectura · Web · Móvil · IA · Automatizaciones · Infraestructura";
+export const HERO_BADGE = "Arquitectura · Web · Móvil · IA · Automatizaciones · Infraestructura";
 
 export const HERO_STATS = [
-  { value: "30+", label: "Proyectos"    },
-  { value: "5+",  label: "Años"         },
-  { value: "20+", label: "Clientes"     },
+  { value: "30+", label: "Proyectos" },
+  { value: "5+", label: "Años" },
+  { value: "20+", label: "Clientes" },
   { value: "98%", label: "Satisfacción" },
 ];
 
@@ -75,37 +74,91 @@ export const SERVICES = [
   },
 ];
 
+export const STACK_CATEGORIES = [
+  {
+    title: "Frontend",
+    number: "01",
+    description: "Interfaces rápidas y\naccesibles",
+    technologies: [
+      { name: "React", icon: "ico-react_transparent.png" },
+      { name: "Next.js", icon: "ico-next_transparent.png" },
+      { name: "TypeScript", icon: "ico-typescript_transparent.png" },
+      { name: "Flutter", icon: "ico-flutter.svg" } // We will handle svg in the component
+    ]
+  },
+  {
+    title: "Backend & APIs",
+    number: "02",
+    description: "Servidores que escalan\nsin drama",
+    technologies: [
+      { name: "Node.js", icon: "ico-node_transparent.png" },
+      { name: "Python", icon: "ico-python_transparent.png" },
+      { name: "GraphQL", icon: "ico-graphql_transparent.png" }
+    ]
+  },
+  {
+    title: "Datos",
+    number: "03",
+    description: "Persistencia confiable\ny veloz",
+    technologies: [
+      { name: "PostgreSQL", icon: "ico-postgress_transparent.png" },
+      { name: "MongoDB", icon: "ico-mongodb_transparent.png" },
+      { name: "Redis", icon: "ico-redis.svg" }
+    ]
+  },
+  {
+    title: "Cloud & DevOps",
+    number: "04",
+    description: "Despliegues automáticos,\nalta disponibilidad",
+    technologies: [
+      { name: "AWS", icon: "ico-aws_transparent.png" },
+      { name: "Docker", icon: "ico-docker_transparent.png" },
+      { name: "Kubernetes", icon: "ico-kubernetes.svg" }
+    ]
+  },
+  {
+    title: "IA & Automatización",
+    number: "05",
+    description: "LLMs integrados a\ntus flujos",
+    technologies: [
+      { name: "OpenAI", icon: "ico-chatgpt_transparent.png" },
+      { name: "LangChain", icon: "ico-langchain.svg" },
+      { name: "n8n", icon: "ico-n8n_transparent.png" }
+    ]
+  }
+];
+
 export const TECHNOLOGIES = [
-  { name: "React",      color: "#61DAFB", icon: "ico-react_transparent.png"},
-  { name: "Node.js",    color: "#68A063", icon: "ico-javascript_transparent.png"},
-  { name: "TypeScript", color: "#3178C6", icon: "ico-typescript_transparent.png"},
-  { name: "Python",     color: "#FFD43B", icon: "ico-python_transparent.png"},
+  { name: "React", color: "#61DAFB", icon: "ico-react_transparent.png" },
+  { name: "Node.js", color: "#68A063", icon: "ico-javascript_transparent.png" },
+  { name: "TypeScript", color: "#3178C6", icon: "ico-typescript_transparent.png" },
+  { name: "Python", color: "#FFD43B", icon: "ico-python_transparent.png" },
   { name: "PostgreSQL", color: "#336791", icon: "ico-postgress_transparent.png" },
-  { name: "MongoDB",    color: "#47A248", icon: "ico-mongodb_transparent.png"},
-  { name: "Docker",     color: "#2496ED", icon: "ico-docker_transparent.png"},
-  { name: "AWS",        color: "#FF9900", icon: "ico-aws_transparent.png"},
-  { name: "Next.js",    color: "#E2E8F0", icon: "ico-next_transparent.png"},
-  { name: "Firebase",   color: "#FFA500", icon: "ico-firebase_transparent.png"},
-  { name: "GraphQL",    color: "#E10098", icon: "ico-graphql_transparent.png"},
-  { name: "NestJS",     color: "#EA2845", icon: "ico-nest_transparent.png"},
-  { name: "Django",     color: "#092E20", icon: "ico-django_transparent.png"},
-  { name: "JavaScript", color: "#F7DF1E", icon: "ico-javascript2_transparent.png"},
-  { name: "Azure",      color: "#0078D4", icon: "ico-azure_transparent.png"},
-  { name: "Google Cloud", color: "#4285F4", icon: "ico-googlecloud_transparent.png"},
-  { name: "Windows Server", color: "#0078D4", icon: "ico-windows_server_transparent.png"},
-  { name: "Power BI",   color: "#F2C811", icon: "ico-powerbi_transparent.png"},
-  { name: "UiPath",     color: "#FF6B35", icon: "ico-uipath_transparent.png"},
-  { name: "Tailwind CSS", color: "#38BDF8", icon: "ico-tailwind_transparent.png"},
+  { name: "MongoDB", color: "#47A248", icon: "ico-mongodb_transparent.png" },
+  { name: "Docker", color: "#2496ED", icon: "ico-docker_transparent.png" },
+  { name: "AWS", color: "#FF9900", icon: "ico-aws_transparent.png" },
+  { name: "Next.js", color: "#E2E8F0", icon: "ico-next_transparent.png" },
+  { name: "Firebase", color: "#FFA500", icon: "ico-firebase_transparent.png" },
+  { name: "GraphQL", color: "#E10098", icon: "ico-graphql_transparent.png" },
+  { name: "NestJS", color: "#EA2845", icon: "ico-nest_transparent.png" },
+  { name: "Django", color: "#092E20", icon: "ico-django_transparent.png" },
+  { name: "JavaScript", color: "#F7DF1E", icon: "ico-javascript2_transparent.png" },
+  { name: "Azure", color: "#0078D4", icon: "ico-azure_transparent.png" },
+  { name: "Google Cloud", color: "#4285F4", icon: "ico-googlecloud_transparent.png" },
+  { name: "Windows Server", color: "#0078D4", icon: "ico-windows_server_transparent.png" },
+  { name: "Power BI", color: "#F2C811", icon: "ico-powerbi_transparent.png" },
+  { name: "UiPath", color: "#FF6B35", icon: "ico-uipath_transparent.png" },
+  { name: "Tailwind CSS", color: "#38BDF8", icon: "ico-tailwind_transparent.png" },
   { name: "ChatGPT", color: "#38BDF8", icon: "ico-chatgpt_transparent.png" },
 ];
 
 export const PROJECTS = [
   {
-    title: "EcoMarket",
-    category: "Web · E-commerce",
+    title: "POSMarket",
+    category: "Web · Punto de Venta",
     description:
-      "Plataforma de ventas online para productos orgánicos con pagos integrados, panel admin y arquitectura de microservicios.",
-    tags: ["React", "Node.js", "Stripe", "AWS"],
+      "Solución integral de punto de venta diseñada para microempresas y negocios minoristas del Perú. Control total de ventas, inventario, clientes y finanzas en una sola plataforma.",
+    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     accentColor: "#10B981",
   },
   {
@@ -117,26 +170,26 @@ export const PROJECTS = [
     accentColor: "#6C63FF",
   },
   {
-    title: "LogiTrack",
+    title: "StockPro",
     category: "Web · Logística",
     description:
-      "Sistema de trazabilidad y gestión de flotas en tiempo real con mapas interactivos y automatización de alertas.",
-    tags: ["Next.js", "Maps API", "n8n", "PostgreSQL"],
+      "Sistema completo de gestión logística para PYMEs peruanas — inventario, despachos, transporte, compras y auditoría en una sola plataforma.",
+    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     accentColor: "#F97316",
   },
   {
-    title: "AutoBot CRM",
-    category: "IA · Automatización",
+    title: "CallSys Pro",
+    category: "CRM · Ventas y Call Center",
     description:
-      "CRM potenciado con IA que automatiza seguimiento de leads, genera respuestas inteligentes y predice conversiones.",
-    tags: ["LangChain", "Python", "Zapier", "GPT-4"],
+      "Aplicación WEB para Call Center de Ventas, diseñada para optimizar la gestión de clientes, oportunidades y procesos de ventas en múltiples canales, ofrece una interfaz moderna, ágil y adaptable.",
+    tags: ["React", "TailwindCSS", "WhatsApp API", "Node.js", "MongoDB", "MongoDB Atlas"],
     accentColor: "#A78BFA",
   },
   {
     title: "InfraScale",
     category: "Cloud · DevOps",
     description:
-      "Migración y optimización de infraestructura cloud para startup fintech. Reducción de costos del 40% y 99.9% uptime.",
+      "Fintech en el cual asumimos el reto: migrar sistemas críticos a la nube y optimizar cada recurso para responder a las exigencias de un sector altamente regulado. Modernizamos arquitecturas heredadas, reforzamos la seguridad y diseñamos una infraestructura capaz de sostener innovación constante",
     tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
     accentColor: "#3B82F6",
   },
@@ -172,13 +225,13 @@ export const TESTIMONIALS = [
 ];
 
 export const CONTACT_INFO = [
-  { icon: "📍", label: "Ubicación", value: "Lima, Perú"                },
-  { icon: "📧", label: "Email",     value: "contacto@studiodevperu.com" },
-  { icon: "📱", label: "WhatsApp",  value: "+51 951 655 295"            },
+  { icon: "📍", label: "Ubicación", value: "Lima, Perú" },
+  { icon: "📧", label: "Email", value: "contacto@studiodevperu.com" },
+  { icon: "📱", label: "WhatsApp", value: "+51 951 655 295" },
 ];
 
 export const SOCIAL_LINKS = [
-  { label: "LinkedIn",  href: "https://linkedin.com",  color: "#0A66C2" },
-  { label: "Facebook",  href: "https://www.facebook.com/profile.php?id=61583754606728",  color: "#1877F2" },
+  { label: "LinkedIn", href: "https://linkedin.com", color: "#0A66C2" },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61583754606728", color: "#1877F2" },
   { label: "Instagram", href: "https://instagram.com", color: "#E1306C" },
 ];
