@@ -20,7 +20,7 @@ import logoImg from "../assets/icono-logo devstudio peru.png";
 function Logo() {
   return (
     <a
-      href="#hero"
+      href="/"
       style={{ display: "flex", alignItems: "center", gap: 14, textDecoration: "none", marginTop: 5 }}
     >
       {/* ── Isotipo: aumentado de 40 a 54 ── */}

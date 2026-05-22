@@ -140,7 +140,7 @@ export default function ServicesSection() {
               textTransform: "uppercase", 
               fontWeight: 700 
             }}>
-              Expertise
+              Servicios
             </span>
           </div>
 

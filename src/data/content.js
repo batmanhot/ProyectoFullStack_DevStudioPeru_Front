@@ -12,15 +12,15 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-export const HERO_TAGLINE = "Transformamos tus ideas en soluciones reales.";
+export const HERO_TAGLINE = "El equipo técnico que tu empresa necesita para ganar.";
 
 export const HERO_BADGE = "Arquitectura · Web · Móvil · IA · Automatizaciones · Infraestructura";
 
 export const HERO_STATS = [
-  { value: "30+", label: "Proyectos" },
-  { value: "5+", label: "Años" },
-  { value: "20+", label: "Clientes" },
-  { value: "98%", label: "Satisfacción" },
+  { value: "50+", label: "Proyectos lanzados" },
+  { value: "8+",  label: "Años de experiencia" },
+  { value: "30+", label: "Clientes activos" },
+  { value: "48h", label: "Propuesta en mano" },
 ];
 
 export const SERVICES = [
@@ -28,7 +28,7 @@ export const SERVICES = [
     icon: "🏗️",
     title: "Arquitectura de Software",
     description:
-      "Diseñamos la base sólida de tu sistema: arquitecturas escalables, microservicios, patrones de diseño y decisiones técnicas que aguantan el crecimiento.",
+      "Tu sistema no se caerá cuando tu empresa crezca. Diseñamos la base técnica para que escalar 10× no signifique reescribir desde cero ni detener operaciones.",
     tags: ["Microservicios", "DDD", "Clean Arch", "API Design"],
     accent: "#6C63FF",
   },
@@ -36,7 +36,7 @@ export const SERVICES = [
     icon: "🌐",
     title: "Desarrollo Web",
     description:
-      "Aplicaciones web modernas, rápidas y accesibles. Desde landing pages de alto impacto hasta sistemas SaaS complejos.",
+      "Desde la landing que convierte hasta el SaaS que retiene usuarios. Apps rápidas, accesibles y construidas para generar resultados — no solo para verse bien.",
     tags: ["React", "Next.js", "Node.js", "TypeScript"],
     accent: "#3B82F6",
   },
@@ -44,7 +44,7 @@ export const SERVICES = [
     icon: "📱",
     title: "Apps Móviles",
     description:
-      "Aplicaciones iOS y Android nativas o multiplataforma con experiencias fluidas que los usuarios aman.",
+      "Apps que los usuarios descargan, usan y no desinstalan. iOS y Android con experiencias fluidas entregadas en un solo ciclo de desarrollo, sin el doble costo.",
     tags: ["React Native", "Flutter", "Expo"],
     accent: "#06B6D4",
   },
@@ -52,7 +52,7 @@ export const SERVICES = [
     icon: "🤖",
     title: "Inteligencia Artificial",
     description:
-      "Integramos IA en tus productos: modelos LLM, visión por computadora, NLP, RAG y automatización inteligente.",
+      "Integra IA antes de que lo haga tu competencia. LLMs, visión artificial y automatización inteligente que reducen costos operativos y abren nuevas fuentes de ingreso.",
     tags: ["OpenAI", "LangChain", "Python", "RAG"],
     accent: "#A78BFA",
   },
@@ -60,7 +60,7 @@ export const SERVICES = [
     icon: "⚡",
     title: "Automatizaciones",
     description:
-      "Eliminamos tareas repetitivas y conectamos tus herramientas. Flujos automatizados que ahorran horas de trabajo cada día.",
+      "Cada hora que tu equipo dedica a tareas repetitivas es dinero que se pierde. Automatizamos operaciones y conectamos herramientas para que tu equipo haga solo lo que importa.",
     tags: ["n8n", "Zapier", "RPA", "Webhooks"],
     accent: "#F59E0B",
   },
@@ -68,7 +68,7 @@ export const SERVICES = [
     icon: "☁️",
     title: "Infraestructura & Cloud",
     description:
-      "Desplegamos, escalamos y securizamos tu aplicación en la nube. CI/CD, contenedores, monitoreo y alta disponibilidad.",
+      "Migra a la nube sin caídas y sin facturas sorpresa. Infraestructura que escala sola, se recupera sola y en promedio cuesta 30–40% menos que on-premise.",
     tags: ["AWS", "Docker", "Kubernetes", "DevOps"],
     accent: "#10B981",
   },
@@ -156,49 +156,56 @@ export const PROJECTS = [
   {
     title: "POSMarket",
     category: "Web · Punto de Venta",
+    metric: "+180% en ventas",
     description:
-      "Solución integral de punto de venta diseñada para microempresas y negocios minoristas del Perú. Control total de ventas, inventario, clientes y finanzas en una sola plataforma.",
+      "Reemplazó tres herramientas separadas con una sola plataforma. Control total de ventas, inventario multi-almacén y reportes en tiempo real para negocios minoristas del Perú.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     accentColor: "#10B981",
   },
   {
-    title: "MedConnect",
-    category: "Móvil · Salud",
+    title: "Moto GO",
+    category: "Móvil · Transportes",
+    metric: "iOS & Android · día 1",
     description:
-      "App de telemedicina para consultas médicas remotas con videollamadas, expedientes digitales e IA para triaje.",
-    tags: ["React Native", "WebRTC", "OpenAI", "AWS"],
+      "La alternativa local a Uber para mototaxis y taxis en Perú. Matching instantáneo con conductores verificados, GPS en tiempo real, identificación de pasajero y cobros digitales — todo en una sola app lanzada simultáneamente en iOS y Android sin el doble costo.",
+    tags: ["React Native", "Node.js", "Google Maps", "AWS"],
     accentColor: "#6C63FF",
   },
   {
     title: "StockPro",
     category: "Web · Logística",
+    metric: "−40% tiempo de despacho",
     description:
-      "Sistema completo de gestión logística para PYMEs peruanas — inventario, despachos, transporte, compras y auditoría en una sola plataforma.",
+      "Redujo el tiempo de despacho un 40% y eliminó errores de inventario. Gestión logística completa para PYMEs — inventario, despachos, transporte y auditoría en una sola plataforma.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     accentColor: "#F97316",
   },
   {
     title: "CallSys Pro",
     category: "CRM · Ventas y Call Center",
+    metric: "+35% tasa de conversión",
     description:
-      "Aplicación WEB para Call Center de Ventas, diseñada para optimizar la gestión de clientes, oportunidades y procesos de ventas en múltiples canales, ofrece una interfaz moderna, ágil y adaptable.",
-    tags: ["React", "TailwindCSS", "WhatsApp API", "Node.js", "MongoDB", "MongoDB Atlas"],
+      "CRM para call centers de ventas que mejoró la conversión un 35%. Gestión de clientes, oportunidades y pipelines en múltiples canales con interfaz moderna y adaptable.",
+    tags: ["React", "TailwindCSS", "WhatsApp API", "Node.js", "MongoDB"],
     accentColor: "#A78BFA",
   },
   {
     title: "InfraScale",
     category: "Cloud · DevOps",
+    metric: "−40% costos de infraestructura",
     description:
-      "Fintech en el cual asumimos el reto: migrar sistemas críticos a la nube y optimizar cada recurso para responder a las exigencias de un sector altamente regulado. Modernizamos arquitecturas heredadas, reforzamos la seguridad y diseñamos una infraestructura capaz de sostener innovación constante",
+      "Migración de sistemas críticos de una fintech a AWS con cero paradas. Recortó costos de infraestructura un 40% con alta disponibilidad multi-zona y pipelines CI/CD.",
     tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
     accentColor: "#3B82F6",
+    nda: true,
   },
   {
-    title: "FacturaIA",
-    category: "IA · Automatización",
+    title: "FastFood Doña Nella",
+    category: "Web · Móvil · Restaurantes",
+    metric: "+3x pedidos vs. teléfono",
     description:
-      "Sistema de procesamiento automático de facturas con OCR, validación con SUNAT y contabilización en tiempo real.",
-    tags: ["Python", "OCR", "FastAPI", "React"],
+      "Eliminó las llamadas y las demoras. Plataforma digital de pedidos y delivery para restaurante que triplicó los pedidos al pasar a canales digitales — con carta interactiva, pagos en línea y seguimiento de entrega en tiempo real, disponible 24/7.",
+    tags: ["React", "Node.js", "Firebase", "Stripe"],
     accentColor: "#F59E0B",
   },
 ];
@@ -208,19 +215,22 @@ export const TESTIMONIALS = [
     name: "Carla Mendoza",
     role: "CEO, EcoMarket Perú",
     avatar: "CM",
-    text: "DevStudio transformó completamente nuestra presencia digital. El equipo es excepcional, cumplieron tiempos y superaron expectativas.",
+    metric: "+180% ventas en 6 meses",
+    text: "En 4 meses pasamos de una operación manual a un sistema completamente digitalizado. Las ventas crecieron 180% y por primera vez tenemos visibilidad real del inventario. Cada hito prometido fue cumplido.",
   },
   {
-    name: "Dr. Andrés Torres",
-    role: "Fundador, MedConnect",
+    name: "André Torres",
+    role: "Fundador, Moto GO",
     avatar: "AT",
-    text: "Profesionalismo de primer nivel. Convirtieron una idea compleja en una app funcional en tiempo récord. Los recomiendo al 100%.",
+    metric: "iOS & Android en tiempo récord",
+    text: "Lanzamos en iOS y Android al mismo tiempo, sin el doble costo ni el doble tiempo. El equipo anticipó cada problema antes de que apareciera — eso no es común en una agencia de desarrollo.",
   },
   {
     name: "Rodrigo Sánchez",
     role: "CTO, LogiTrack",
     avatar: "RS",
-    text: "Su dominio técnico y enfoque en la experiencia de usuario marcó la diferencia. El producto final superó todas nuestras métricas.",
+    metric: "−40% tiempo de despacho",
+    text: "Redujimos el tiempo de despacho un 40% y los errores de inventario prácticamente desaparecieron. Lo más valioso: el código que entregaron se puede mantener. No fue un parche.",
   },
 ];
 

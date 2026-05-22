@@ -7,7 +7,13 @@ import { HERO_STATS } from "../data/content";
 import logo from "../assets/icono-logo devstudio peru.png";
 
 // Palabras que rotan en el typewriter
-const ROTATING_WORDS = ["Escalable.", "Seguro.", "Veloz.", "Innovador.", "Premium."];
+const ROTATING_WORDS = [
+  "que hace crecer tu negocio.",
+  "que nunca te falla.",
+  "que tus usuarios aman.",
+  "que escala contigo.",
+  "que genera resultados.",
+];
 
 // Partículas de código flotantes — distribuidas por toda la pantalla
 const CODE_PARTICLES = [
@@ -400,7 +406,7 @@ export default function HeroSection() {
               fontSize: "clamp(38px, 5.5vw, 72px)", lineHeight: 1.05,
               color: "#F8FAFC", letterSpacing: "-0.04em", marginBottom: 12
             }}>
-              Software que es
+              Software
             </h1>
             <h1 style={{
               fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900,
@@ -430,7 +436,7 @@ export default function HeroSection() {
               fontSize: "clamp(16px, 1.8vw, 19px)", color: "#94A3B8",
               lineHeight: 1.8, marginBottom: 44, maxWidth: 520,
             }}>
-              Desarrollamos arquitecturas de software de alto rendimiento — aplicaciones web, móviles, APIs robustas y soluciones de IA para empresas que no se conforman con lo ordinario.
+              Somos el equipo técnico que las PYMEs y startups de LATAM contratan cuando necesitan software real — no demos que no escalan, ni proyectos que se abandonan a mitad de camino.
             </p>
           </div>
 

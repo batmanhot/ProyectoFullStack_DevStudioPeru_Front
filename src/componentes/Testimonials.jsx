@@ -28,6 +28,23 @@ function TestimonialCard({ testimonial, index, visible }) {
         fontFamily: "serif", lineHeight: 1
       }}>“</div>
 
+      {/* Metric chip */}
+      {testimonial.metric && (
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 6,
+          background: "rgba(59,130,246,0.08)", border: "1px solid rgba(59,130,246,0.2)",
+          borderRadius: 100, padding: "5px 14px", marginBottom: 16
+        }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#38BDF8", flexShrink: 0 }} />
+          <span style={{
+            fontFamily: "'Space Grotesk', sans-serif", fontSize: 12,
+            fontWeight: 800, color: "#38BDF8", letterSpacing: "0.02em"
+          }}>
+            {testimonial.metric}
+          </span>
+        </div>
+      )}
+
       {/* Text */}
       <p style={{
         fontFamily: "'Plus Jakarta Sans', sans-serif",

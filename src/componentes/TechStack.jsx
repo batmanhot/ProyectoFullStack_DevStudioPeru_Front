@@ -101,7 +101,7 @@ export default function TechStack() {
         >
           <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
           <span className="font-display text-[12px] text-blue-300 uppercase tracking-[0.2em] font-bold">
-            Expertise
+            Tecnologías
           </span>
         </div>
 

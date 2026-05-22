@@ -1,6 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 //  src/components/Footer.jsx  — Premium v3
 // ─────────────────────────────────────────────────────────────
+import { Link } from "react-router-dom";
 import { NAV_LINKS, SOCIAL_LINKS } from "../data/content";
 import logo from "../assets/icono-logo devstudio peru.png";
 
@@ -38,11 +39,11 @@ const COL_SERVICIOS = [
 ];
 
 const COL_EMPRESA = [
-  { label: "Nosotros",        href: "#nosotros"  },
-  { label: "Cómo trabajamos", href: "#servicios" },
-  { label: "Casos de éxito",  href: "#proyectos" },
-  { label: "Testimonios",     href: "#testimonios"},
-  { label: "Carreras",        href: "#contacto"  },
+  { label: "Nosotros",        href: "/nosotros",        external: false },
+  { label: "Cómo trabajamos", href: "/como-trabajamos", external: false },
+  // { label: "Casos de éxito",  href: "/casos-de-exito",  external: false },
+  // { label: "Testimonios",     href: "/#testimonios",    external: false },
+  { label: "Bolsa de Trabajo", href: "/carreras",        external: false },
 ];
 
 const CONTACT_ITEMS = [
@@ -66,26 +67,27 @@ function ColTitle({ children }) {
   );
 }
 
+const linkStyle = {
+  fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14,
+  color: "#94A3B8", textDecoration: "none", transition: "all 0.2s ease",
+  display: "flex", alignItems: "center", gap: 6,
+};
+const linkEnter = e => { e.currentTarget.style.color = "#60A5FA"; e.currentTarget.style.paddingLeft = "6px"; };
+const linkLeave = e => { e.currentTarget.style.color = "#94A3B8"; e.currentTarget.style.paddingLeft = "0px"; };
+
 function FooterLink({ href, children }) {
+  const isRouter = href.startsWith("/");
   return (
     <li>
-      <a href={href} style={{
-        fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14,
-        color: "#94A3B8", textDecoration: "none", transition: "all 0.2s ease",
-        display: "flex", alignItems: "center", gap: 6,
-      }}
-        onMouseEnter={e => {
-          e.currentTarget.style.color = "#60A5FA";
-          e.currentTarget.style.paddingLeft = "6px";
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.color = "#94A3B8";
-          e.currentTarget.style.paddingLeft = "0px";
-        }}
-      >
-        <span style={{ color: "#1E3A5F", fontSize: 10 }}>▶</span>
-        {children}
-      </a>
+      {isRouter ? (
+        <Link to={href} style={linkStyle} onMouseEnter={linkEnter} onMouseLeave={linkLeave}>
+          <span style={{ color: "#1E3A5F", fontSize: 10 }}>▶</span>{children}
+        </Link>
+      ) : (
+        <a href={href} style={linkStyle} onMouseEnter={linkEnter} onMouseLeave={linkLeave}>
+          <span style={{ color: "#1E3A5F", fontSize: 10 }}>▶</span>{children}
+        </a>
+      )}
     </li>
   );
 }
