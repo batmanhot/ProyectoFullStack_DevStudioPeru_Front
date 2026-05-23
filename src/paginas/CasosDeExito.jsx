@@ -104,6 +104,7 @@ export default function CasosDeExito() {
   const [refCasos, visCasos] = useInView(0.08);
   const [refCta, visCta] = useInView(0.1);
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 900;
   const pad = "clamp(24px, 5vw, 80px)";
 
   return (
@@ -189,8 +190,8 @@ export default function CasosDeExito() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr auto",
-                  gap: 18,
+                  gridTemplateColumns: isMobile ? "1fr" : "1fr auto",
+                  gap: isMobile ? 14 : 18,
                   alignItems: "start",
                 }}
               >
@@ -256,10 +257,10 @@ export default function CasosDeExito() {
                     style={{
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                       color: "#94A3B8",
-                      fontSize: 15.5,
-                      lineHeight: 1.75,
+                      fontSize: isMobile ? 15 : 15.5,
+                      lineHeight: isMobile ? 1.68 : 1.75,
                       margin: 0,
-                      maxWidth: 860,
+                      maxWidth: "100%",
                     }}
                   >
                     {c.desc}
@@ -268,12 +269,13 @@ export default function CasosDeExito() {
 
                 <div
                   style={{
-                    minWidth: 150,
-                    textAlign: "right",
+                    minWidth: isMobile ? "auto" : 150,
+                    width: isMobile ? "100%" : "auto",
+                    textAlign: isMobile ? "left" : "right",
                     background: `${c.color}0F`,
                     border: `1px solid ${c.color}2E`,
                     borderRadius: 16,
-                    padding: "14px 16px",
+                    padding: isMobile ? "12px 14px" : "14px 16px",
                   }}
                 >
                   <div
