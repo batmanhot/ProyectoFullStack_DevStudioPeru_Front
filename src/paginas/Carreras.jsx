@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useInView } from "../hooks/useInView";
 import PageLayout from "./PageLayout";
 
@@ -70,6 +71,10 @@ export default function Carreras() {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Bolsa de Trabajo | DevStudio Perú — Únete al Equipo en Lima</title>
+        <meta name="description" content="Posiciones abiertas en DevStudio Perú: Full-Stack, Product Designer, DevOps. Trabajo 100% remoto, salario en USD y proyectos reales que llegan a producción." />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section ref={refHero} style={{ padding: `clamp(100px,12vh,140px) ${pad} 80px` }}>

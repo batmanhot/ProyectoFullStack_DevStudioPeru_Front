@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "../hooks/useInView";
 import PageLayout from "./PageLayout";
 
@@ -88,6 +89,10 @@ export default function Nosotros() {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Nosotros | DevStudio Perú — Equipo de Software en Lima</title>
+        <meta name="description" content="Somos un estudio de ingeniería en Lima, Perú. Conoce nuestro equipo, misión, valores y por qué más de 30 empresas confían en nosotros para construir software real." />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section ref={refHero} style={{ padding: `clamp(100px,12vh,140px) ${pad} 80px` }}>

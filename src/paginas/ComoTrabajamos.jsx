@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "../hooks/useInView";
 import PageLayout from "./PageLayout";
 
@@ -72,6 +73,10 @@ export default function ComoTrabajamos() {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Cómo Trabajamos | DevStudio Perú — 5 Pasos, Precio Fijo</title>
+        <meta name="description" content="Conoce nuestro proceso de trabajo: 5 etapas claras, precio cerrado desde el inicio, demos cada 2 semanas y 30 días de soporte incluido. Sin sorpresas." />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section ref={refHero} style={{ padding: `clamp(100px,12vh,140px) ${pad} 80px` }}>

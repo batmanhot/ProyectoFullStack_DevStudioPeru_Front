@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import PageLayout from "./PageLayout";
 
 const CASOS = [
@@ -39,6 +40,10 @@ const CASOS = [
 export default function CasosDeExito() {
   return (
     <PageLayout title="Casos de éxito">
+      <Helmet>
+        <title>Casos de Éxito | DevStudio Perú — Resultados Reales en LATAM</title>
+        <meta name="description" content="Proyectos reales con resultados medibles: +180% en ventas, −40% tiempo de despacho, 15k+ usuarios en el primer mes. Conoce cómo DevStudio Perú transforma negocios." />
+      </Helmet>
 
       <section className="shell-page-hero">
         <span className="shell-pill"><span className="shell-dot" />Casos de éxito</span>
