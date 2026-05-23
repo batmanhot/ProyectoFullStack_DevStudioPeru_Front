@@ -175,7 +175,7 @@ export default function ServicesSection() {
         {/* Grid */}
         <div style={{ 
           display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", 
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 350px), 1fr))", 
           gap: 32 
         }}>
           {SERVICES.map((s, i) => (

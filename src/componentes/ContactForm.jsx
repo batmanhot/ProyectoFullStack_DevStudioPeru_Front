@@ -315,7 +315,7 @@ export default function ContactForm() {
         </div>
 
         {/* ── Grid: Info + Formulario ── */}
-        <div style={{
+        <div className="contact-grid" style={{
           display: "grid",
           gridTemplateColumns: "minmax(0,1fr) minmax(0,1.2fr)",
           gap: "clamp(40px, 6vw, 100px)",
@@ -405,6 +405,13 @@ export default function ContactForm() {
         @keyframes pulseDot {
           0%,100% { transform: scale(1); opacity: 1; }
           50%      { transform: scale(1.6); opacity: 0.5; }
+        }
+
+        @media (max-width: 850px) {
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
         }
       `}</style>
     </section>

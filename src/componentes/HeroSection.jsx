@@ -366,7 +366,7 @@ export default function HeroSection() {
       })}
 
       {/* ══ LAYOUT PRINCIPAL ══ */}
-      <div style={{
+      <div className="hero-grid" style={{
         position: "relative", zIndex: 1,
         width: "100%", maxWidth: 1400, margin: "0 auto",
         display: "grid",
@@ -472,7 +472,9 @@ export default function HeroSection() {
           {/* Stats inline */}
           <div style={{
             ...anim(0.5),
-            display: "grid", gridTemplateColumns: "repeat(4, auto)", gap: "0 32px",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "24px 32px",
             paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.06)",
             width: "fit-content"
           }}>
@@ -534,10 +536,11 @@ export default function HeroSection() {
         @keyframes scrollDot { 0%{transform:translateY(0);opacity:1} 100%{transform:translateY(14px);opacity:0} }
 
         @media (max-width: 900px) {
-          #hero > div:nth-child(4) {
+          .hero-grid {
             grid-template-columns: 1fr !important;
+            gap: 32px !important;
           }
-          #hero > div:nth-child(4) > div:last-child {
+          .hero-grid > div:last-child {
             display: none !important;
           }
         }
