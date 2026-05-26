@@ -320,7 +320,7 @@ export default function Navbar({ scrollY }) {
           }}>
             <AvailBadge />
             <a href="#proyectos" className="dsp-btn-ghost">
-              Ver proyectos →
+              Ver casos →
             </a>
             <a href="#contacto" className="dsp-btn-cta">
               Contacto

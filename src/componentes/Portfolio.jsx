@@ -2,6 +2,7 @@
 //  src/components/Portfolio.jsx
 // ─────────────────────────────────────────────────────────────
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useInView } from "../hooks/useInView";
 import { PROJECTS } from "../data/content";
 
@@ -295,7 +296,7 @@ function ProjectCard({ project, index, visible }) {
       <div style={{ padding: "28px 28px 32px", position: "relative", zIndex: 1 }}>
         <h3 style={{
           fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700,
-          fontSize: 22, color: "#F8FAFC", marginBottom: 10, letterSpacing: "-0.01em",
+          fontSize: 22, color: "#F8FAFC", marginBottom: 8, letterSpacing: "-0.01em",
           display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap"
         }}>
           {project.title}
@@ -313,9 +314,9 @@ function ProjectCard({ project, index, visible }) {
         </h3>
         <p style={{
           fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14,
-          color: "#94A3B8", lineHeight: 1.7, marginBottom: 20
+          color: "#94A3B8", lineHeight: 1.6, marginBottom: 20
         }}>
-          {project.description}
+          {project.subtitle}
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
           {project.tags.map(tag => (
@@ -365,7 +366,7 @@ export default function Portfolio() {
           }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#3B82F6", boxShadow: "0 0 10px #3B82F6" }} />
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "#93C5FD", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 700 }}>
-              Proyectos
+              Casos de Éxito
             </span>
           </div>
           <h2 style={{
@@ -373,16 +374,19 @@ export default function Portfolio() {
             fontSize: "clamp(32px,5vw,56px)", color: "#F8FAFC",
             lineHeight: 1, marginBottom: 20, letterSpacing: "-0.03em"
           }}>
-            Proyectos que <span style={{
+            Empresas que transformaron{" "}
+            <span style={{
               background: "linear-gradient(135deg, #60A5FA, #38BDF8)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"
-            }}>Impulsan</span> el Mañana
+            }}>
+              su operación
+            </span>
           </h2>
           <p style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#94A3B8",
-            maxWidth: 550, margin: "0 auto", fontSize: 18, lineHeight: 1.6
+            maxWidth: 560, margin: "0 auto", fontSize: 18, lineHeight: 1.6
           }}>
-            Explora una selección curada de nuestras innovaciones más recientes en desarrollo web, móvil e inteligencia artificial.
+            Proyectos reales con resultados medibles. Cada caso es una transformación operativa que genera impacto desde el primer mes.
           </p>
         </div>
 
@@ -395,6 +399,41 @@ export default function Portfolio() {
           {PROJECTS.map((p, i) => (
             <ProjectCard key={p.title} project={p} index={i} visible={visible} />
           ))}
+        </div>
+
+        {/* Ver todos */}
+        <div style={{
+          textAlign: "center", marginTop: 56,
+          opacity: visible ? 1 : 0,
+          transition: "opacity 0.8s ease 0.6s",
+        }}>
+          <Link
+            to="/casos-de-exito"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 10,
+              background: "rgba(59,130,246,0.08)",
+              border: "1px solid rgba(59,130,246,0.25)",
+              color: "#93C5FD",
+              textDecoration: "none",
+              padding: "16px 32px",
+              borderRadius: 14,
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 700, fontSize: 15,
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = "rgba(59,130,246,0.15)";
+              e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "rgba(59,130,246,0.08)";
+              e.currentTarget.style.borderColor = "rgba(59,130,246,0.25)";
+              e.currentTarget.style.transform = "none";
+            }}
+          >
+            Ver todos los casos de éxito →
+          </Link>
         </div>
       </div>
     </section>

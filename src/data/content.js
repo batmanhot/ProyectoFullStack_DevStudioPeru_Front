@@ -5,11 +5,12 @@
 // ─────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Tecnologías", href: "#tecnologias" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Testimonios", href: "#testimonios" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Servicios",       href: "#servicios" },
+  { label: "Especialización", href: "#especializacion" },
+  { label: "Casos de Éxito", href: "#proyectos" },
+  { label: "Proceso",         href: "#proceso" },
+  { label: "Testimonios",     href: "#testimonios" },
+  { label: "Contacto",        href: "#contacto" },
 ];
 
 export const HERO_TAGLINE = "El equipo técnico que tu empresa necesita para ganar.";
@@ -28,7 +29,7 @@ export const SERVICES = [
     icon: "🏗️",
     title: "Arquitectura de Software",
     description:
-      "Construimos la base tecnológica de tu negocio para que escalar no signifique reescribir desde cero ni detener operaciones. Tu empresa crece — tu sistema la sigue.",
+      "Diseñamos la arquitectura que sostiene operaciones críticas. Sistemas modulares, resilientes y preparados para escalar sin reescribir ni interrumpir la operación de tu negocio.",
     tags: ["Microservicios", "DDD", "Clean Arch", "API Design"],
     accent: "#6C63FF",
   },
@@ -36,7 +37,7 @@ export const SERVICES = [
     icon: "🌐",
     title: "Desarrollo Web",
     description:
-      "Desde el sistema que digitaliza tu operación diaria hasta la plataforma que fideliza clientes. Aplicaciones web construidas para generar resultados de negocio, no solo para lucir bien.",
+      "Plataformas empresariales que centralizan y digitalizan operaciones críticas. Desde sistemas de gestión interno hasta plataformas de cara al cliente — construidas para operar sin fallas y escalar sin límites.",
     tags: ["React", "Next.js", "Node.js", "TypeScript"],
     accent: "#3B82F6",
   },
@@ -44,7 +45,7 @@ export const SERVICES = [
     icon: "📱",
     title: "Apps Móviles",
     description:
-      "Pon tu negocio en el bolsillo de tus clientes y colaboradores. Apps iOS y Android que se usan y no se desinstalan — desarrolladas en un solo ciclo, sin el doble costo ni el doble tiempo.",
+      "Digitaliza el acceso a tus operaciones desde cualquier dispositivo. Apps empresariales iOS y Android que conectan a tu equipo, clientes y procesos en tiempo real, sin fricción y sin doble costo.",
     tags: ["React Native", "Flutter", "Expo"],
     accent: "#06B6D4",
   },
@@ -52,7 +53,7 @@ export const SERVICES = [
     icon: "🤖",
     title: "Inteligencia Artificial",
     description:
-      "Reduce costos operativos y abre nuevas fuentes de ingreso antes de que lo haga tu competencia. Integramos IA en tus procesos — asistentes inteligentes, análisis predictivo y automatización avanzada.",
+      "Automatiza decisiones operativas e integra inteligencia en tus procesos. Análisis predictivo, asistentes inteligentes y automatización avanzada — IA aplicada directamente a la eficiencia de tu operación.",
     tags: ["OpenAI", "LangChain", "Python", "RAG"],
     accent: "#A78BFA",
   },
@@ -60,7 +61,7 @@ export const SERVICES = [
     icon: "⚡",
     title: "Automatizaciones",
     description:
-      "Cada hora que tu equipo dedica a tareas repetitivas es dinero que se pierde. Eliminamos procesos manuales, conectamos tus sistemas y liberamos a tu equipo para enfocarse en lo que realmente genera valor.",
+      "Elimina los cuellos de botella operativos y libera la capacidad de tu equipo. Automatizamos flujos de trabajo, integramos sistemas y conectamos plataformas para que tu operación funcione sola.",
     tags: ["n8n", "Zapier", "RPA", "Webhooks"],
     accent: "#F59E0B",
   },
@@ -68,7 +69,7 @@ export const SERVICES = [
     icon: "☁️",
     title: "Infraestructura & Cloud",
     description:
-      "Lleva tu operación a la nube sin interrupciones ni sorpresas en la factura. Infraestructura que se escala y recupera automáticamente, con un costo promedio 30–40% menor que los servidores tradicionales.",
+      "Infraestructura robusta que garantiza continuidad operativa. Migración a la nube con cero interrupciones, costos optimizados y alta disponibilidad — para que tu operación nunca se detenga.",
     tags: ["AWS", "Docker", "Kubernetes", "DevOps"],
     accent: "#10B981",
   },
@@ -157,6 +158,18 @@ export const PROJECTS = [
     title: "POSMarket",
     category: "Web · Punto de Venta",
     metric: "+180% en ventas",
+    metricValue: "+180%",
+    metricContext: "incremento en ventas",
+    subtitle: "Sistema POS unificado que centralizó ventas, inventario y caja en una sola plataforma.",
+    cliente: "Retail peruano · 2024",
+    challenge: "El cliente operaba con tres herramientas separadas para ventas, caja e inventario. En horas pico perdía el control: errores de caja, stock desactualizado y sin visibilidad para decidir qué reponer o qué promover.",
+    solution: "Diseñamos una plataforma POS completa con inventario multi-almacén, punto de venta rápido, control de lotes y reportes en tiempo real. Una sola herramienta reemplazó tres sistemas desconectados y eliminó los cuellos de botella operativos.",
+    results: [
+      "+180% incremento en ventas en los primeros 6 meses",
+      "Cero pérdidas por quiebre de stock no detectado",
+      "Decisiones comerciales basadas en datos en tiempo real",
+      "Reducción de errores en caja y control de reposición",
+    ],
     description:
       "Centralizó ventas, inventario y reportes en una sola plataforma, eliminando tres herramientas dispersas. Control total de la operación comercial con visibilidad en tiempo real para negocios minoristas.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
@@ -166,6 +179,18 @@ export const PROJECTS = [
     title: "Moto GO",
     category: "Móvil · Transportes",
     metric: "iOS & Android · día 1",
+    metricValue: "Día 1",
+    metricContext: "lanzamiento iOS + Android",
+    subtitle: "App de movilidad con GPS y cobros digitales, lanzada simultáneamente en iOS y Android.",
+    cliente: "Startup de movilidad · 2024",
+    challenge: "Necesitaban competir contra apps consolidadas con presupuesto limitado y salir al mercado en semanas. Un desarrollo nativo separado para iOS y Android era inviable: el doble del costo y el doble del tiempo.",
+    solution: "Construimos una app cross-platform para iOS y Android con matching en tiempo real, GPS integrado, cobros digitales y panel de gestión de conductores. Una sola base de código, dos plataformas, lanzamiento el mismo día.",
+    results: [
+      "Lanzamiento simultáneo en iOS y Android desde día 1",
+      "50% menos costo frente al desarrollo nativo separado",
+      "Validación comercial con usuarios reales en semanas",
+      "Matching conductor-pasajero en tiempo real operativo",
+    ],
     description:
       "Digitalizó el transporte local en Perú con una plataforma de movilidad completa. Matching instantáneo, pagos digitales y GPS en tiempo real — lanzada simultáneamente en iOS y Android sin el doble costo ni tiempo.",
     tags: ["React Native", "Node.js", "Google Maps", "AWS"],
@@ -175,6 +200,18 @@ export const PROJECTS = [
     title: "StockPro",
     category: "Web · Logística",
     metric: "−40% tiempo de despacho",
+    metricValue: "−40%",
+    metricContext: "tiempo de despacho",
+    subtitle: "Suite logística unificada con trazabilidad completa de inventario, despachos y auditoría.",
+    cliente: "Operación logística PYME · 2023",
+    challenge: "La operación sufría retrasos diarios por procesos manuales y sistemas desconectados entre inventario, despacho y transporte. Los errores frecuentes generaban pérdidas, retrabajo y reclamos de clientes.",
+    solution: "Implementamos una suite logística completa con trazabilidad end-to-end, tableros por proceso, gestión de despachos, rutas de transporte y auditoría operativa centralizada. Todo el flujo logístico visible desde un solo panel.",
+    results: [
+      "−40% reducción en tiempo de despacho",
+      "Práctica eliminación de errores de inventario",
+      "Trazabilidad completa desde ingreso hasta entrega",
+      "Auditoría operativa en tiempo real sin procesos manuales",
+    ],
     description:
       "Redujo el tiempo de despacho un 40% y eliminó los errores de inventario que generaban pérdidas. Gestión logística completa — inventario, despachos, transporte y auditoría centralizada en una sola plataforma.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
@@ -184,6 +221,18 @@ export const PROJECTS = [
     title: "CallSys Pro",
     category: "CRM · Ventas y Call Center",
     metric: "+35% tasa de conversión",
+    metricValue: "+35%",
+    metricContext: "tasa de conversión",
+    subtitle: "CRM omnicanal con pipeline visual y automatizaciones para equipos de ventas B2B.",
+    cliente: "Equipo comercial B2B · 2024",
+    challenge: "El equipo comercial gestionaba leads en canales dispersos — email, WhatsApp y llamadas — sin trazabilidad ni seguimiento sistemático. Perdían oportunidades y no tenían visibilidad real del embudo de ventas.",
+    solution: "Centralizamos toda la gestión comercial en un CRM con pipeline visual, automatizaciones de seguimiento, integración con WhatsApp y métricas de conversión por etapa y agente. Todo el equipo operando desde una sola plataforma.",
+    results: [
+      "+35% incremento en tasa de conversión",
+      "Pipeline comercial 100% centralizado y trazable",
+      "Ciclos de venta más cortos con seguimiento automático",
+      "Mayor productividad por agente con métricas en tiempo real",
+    ],
     description:
       "Incrementó la conversión de ventas un 35% al centralizar gestión de clientes, pipelines y comunicación multicanal. Visibilidad completa del embudo comercial para equipos de ventas y call centers.",
     tags: ["React", "TailwindCSS", "WhatsApp API", "Node.js", "MongoDB"],
@@ -193,6 +242,18 @@ export const PROJECTS = [
     title: "InfraScale",
     category: "Cloud · DevOps",
     metric: "−40% costos de infraestructura",
+    metricValue: "−40%",
+    metricContext: "costos de infraestructura",
+    subtitle: "Migración a AWS sin interrupciones para fintech con infraestructura crítica en crecimiento.",
+    cliente: "Fintech (confidencial) · 2025",
+    challenge: "La fintech operaba sobre infraestructura on-premise con costos elevados y riesgo real de caída en picos de carga. El sistema no podía escalar para soportar el crecimiento proyectado sin inversión desproporcionada.",
+    solution: "Ejecutamos una migración progresiva a AWS con arquitectura multi-zona, CI/CD completo, observabilidad full-stack y estrategia de rollback. El sistema migró completamente sin detener la operación ni afectar a ningún usuario final.",
+    results: [
+      "−40% reducción en costos de infraestructura mensuales",
+      "Cero interrupciones durante todo el proceso de migración",
+      "Alta disponibilidad multi-zona activa 24/7",
+      "Despliegues automatizados con CI/CD en producción",
+    ],
     description:
       "Migró sistemas críticos a AWS con cero interrupciones operativas, reduciendo costos de infraestructura un 40%. Alta disponibilidad multi-zona y despliegues automatizados para una fintech en crecimiento.",
     tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
@@ -202,7 +263,19 @@ export const PROJECTS = [
   {
     title: "FastFood Doña Nella",
     category: "Web · Móvil · Restaurantes",
-    metric: "+3x pedidos vs. teléfono",
+    metric: "+3x pedidos digitales",
+    metricValue: "3×",
+    metricContext: "más pedidos digitales",
+    subtitle: "Plataforma propia de pedidos y delivery 24/7, sin comisiones ni dependencia de terceros.",
+    cliente: "Cadena gastronómica local · 2024",
+    challenge: "Dependían exclusivamente del teléfono para tomar pedidos, generando demoras, errores y pérdida de ventas en horas punta. Sin canal digital propio, estaban atados a plataformas de terceros con altas comisiones.",
+    solution: "Creamos una plataforma propia de pedidos digitales con carta interactiva, pagos en línea, seguimiento de entrega en tiempo real y panel de gestión para cocina y reparto. Canal digital 100% propio, sin intermediarios.",
+    results: [
+      "3× incremento en pedidos frente al canal telefónico",
+      "Disponibilidad 24/7 sin depender de atención manual",
+      "Pagos en línea integrados sin comisiones a terceros",
+      "Operación de cocina y delivery más ordenada y eficiente",
+    ],
     description:
       "Triplicó los pedidos al reemplazar llamadas telefónicas por una plataforma digital disponible 24/7. Carta interactiva, pagos en línea y seguimiento de entrega en tiempo real — digitalización completa del restaurante.",
     tags: ["React", "Node.js", "Firebase", "Stripe"],

@@ -7,6 +7,8 @@ const PAIN_POINTS = [
   { icon: "🔍", text: "Sin visibilidad real del negocio — sin datos, sin indicadores, sin control" },
   { icon: "🔄", text: "Tareas repetitivas que tu equipo realiza a mano todos los días" },
   { icon: "📉", text: "Sistemas desconectados que no se comunican entre sí" },
+  { icon: "🧩", text: "Baja trazabilidad de procesos — no sabes qué falla ni dónde" },
+  { icon: "🔒", text: "Sistemas limitados o desactualizados que no escalan con tu empresa" },
 ];
 
 export default function ProblemSection() {
@@ -59,12 +61,12 @@ export default function ProblemSection() {
             marginBottom: 20,
             letterSpacing: "-0.03em",
           }}>
-            ¿Tu empresa aún opera con{" "}
+            ¿Tu empresa aún depende de{" "}
             <span style={{
               background: "linear-gradient(135deg, #EF4444, #F87171)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             }}>
-              procesos manuales?
+              procesos manuales y herramientas dispersas?
             </span>
           </h2>
 
@@ -129,7 +131,7 @@ export default function ProblemSection() {
               lineHeight: 1.6,
               margin: 0,
             }}>
-              "La tecnología correcta puede transformar completamente la operación de tu negocio — sin proyectos de años ni presupuestos inalcanzables."
+              "La falta de automatización limita el crecimiento de las empresas. La tecnología correcta puede cambiar eso — más rápido y a menor costo de lo que imaginas."
             </p>
           </div>
         </div>

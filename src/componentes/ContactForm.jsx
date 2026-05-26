@@ -21,9 +21,9 @@ const TRUST_SIGNALS = [
 ];
 
 const STATS = [
-  { value: "30+", label: "Proyectos entregados" },
-  { value: "98%", label: "Clientes satisfechos" },
-  { value: "5+",  label: "Años de experiencia" },
+  { value: "50+", label: "Proyectos entregados" },
+  { value: "30+", label: "Clientes satisfechos" },
+  { value: "8+",  label: "Años de experiencia" },
 ];
 
 // ── Íconos SVG ────────────────────────────────────────────────

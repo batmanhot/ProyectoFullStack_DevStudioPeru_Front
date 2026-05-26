@@ -8,11 +8,11 @@ import logo from "../assets/icono-logo devstudio peru.png";
 
 // Palabras que rotan en el typewriter
 const ROTATING_WORDS = [
-  "que automatiza tu operación.",
-  "que hace crecer tu empresa.",
-  "que elimina errores operativos.",
+  "que automatiza tus operaciones.",
+  "que transforma tu empresa.",
+  "que centraliza tus procesos.",
+  "que reduce costos operativos.",
   "que escala con tu negocio.",
-  "que genera resultados reales.",
 ];
 
 // Partículas de código flotantes — distribuidas por toda la pantalla
@@ -436,7 +436,7 @@ export default function HeroSection() {
               fontSize: "clamp(16px, 1.8vw, 19px)", color: "#94A3B8",
               lineHeight: 1.8, marginBottom: 44, maxWidth: 520,
             }}>
-              Ayudamos a empresas a digitalizar operaciones, automatizar procesos y crecer con tecnología a medida — sin proyectos abandonados, sin promesas vacías, con resultados medibles desde el primer mes.
+              Diseñamos plataformas empresariales que optimizan procesos, reducen errores operativos y aceleran el crecimiento de tu negocio — con arquitectura escalable, soporte continuo y resultados medibles.
             </p>
           </div>
 
@@ -453,7 +453,7 @@ export default function HeroSection() {
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 45px rgba(37,99,235,0.5)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(37,99,235,0.35)"; }}
             >
-              Solicitar Diagnóstico →
+              Solicitar Diagnóstico Empresarial →
             </a>
             <a href="#proyectos" style={{
               fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15,
@@ -465,7 +465,7 @@ export default function HeroSection() {
               onMouseEnter={e => { e.currentTarget.style.color = "#F8FAFC"; e.currentTarget.style.borderColor = "rgba(59,130,246,0.4)"; e.currentTarget.style.background = "rgba(59,130,246,0.08)"; }}
               onMouseLeave={e => { e.currentTarget.style.color = "#94A3B8"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.background = "rgba(255,255,255,0.03)"; }}
             >
-              Ver Casos de Éxito
+              Agendar Reunión →
             </a>
           </div>
 

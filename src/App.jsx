@@ -6,17 +6,19 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 import ScrollToTop from "./hooks/useScrollToTop";
 import { useScrollY } from "./hooks/useInView";
 
-import Navbar          from "./componentes/Navbar";
-import HeroSection     from "./componentes/HeroSection";
-import ProblemSection  from "./componentes/ProblemSection";
-import ServicesSection from "./componentes/ServicesSection";
-import BenefitsSection from "./componentes/BenefitsSection";
-import Portfolio       from "./componentes/Portfolio";
-import Testimonials    from "./componentes/Testimonials";
-import ProcessSection  from "./componentes/ProcessSection";
-import TechStack       from "./componentes/TechStack";
-import ContactForm     from "./componentes/ContactForm";
-import Footer          from "./componentes/Footer";
+import Navbar                 from "./componentes/Navbar";
+import HeroSection            from "./componentes/HeroSection";
+import ProblemSection         from "./componentes/ProblemSection";
+import TransformationSection  from "./componentes/TransformationSection";
+import ServicesSection        from "./componentes/ServicesSection";
+import BenefitsSection        from "./componentes/BenefitsSection";
+import SpecializationSection  from "./componentes/SpecializationSection";
+import Portfolio              from "./componentes/Portfolio";
+import Testimonials           from "./componentes/Testimonials";
+import ProcessSection         from "./componentes/ProcessSection";
+import TechStack              from "./componentes/TechStack";
+import ContactForm            from "./componentes/ContactForm";
+import Footer                 from "./componentes/Footer";
 
 import Nosotros        from "./paginas/Nosotros";
 import ComoTrabajamos  from "./paginas/ComoTrabajamos";
@@ -35,8 +37,10 @@ function LandingPage() {
       <main>
         <HeroSection />
         <ProblemSection />
+        <TransformationSection />
         <ServicesSection />
         <BenefitsSection />
+        <SpecializationSection />
         <Portfolio />
         <Testimonials />
         <ProcessSection />
