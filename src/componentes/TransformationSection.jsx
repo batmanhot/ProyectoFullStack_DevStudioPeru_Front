@@ -79,7 +79,7 @@ export default function TransformationSection() {
         </div>
 
         {/* Encabezados de columna */}
-        <div style={{
+        <div className="comp-header" style={{
           display: "grid", gridTemplateColumns: "1fr auto 1fr",
           gap: "0 24px", marginBottom: 16,
           opacity: visible ? 1 : 0,
@@ -101,7 +101,7 @@ export default function TransformationSection() {
             </span>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div className="comp-divider" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: 1, height: "100%", background: "rgba(255,255,255,0.06)" }} />
           </div>
 
@@ -125,7 +125,7 @@ export default function TransformationSection() {
         {/* Filas de comparación */}
         <div style={{ display: "grid", gap: 10 }}>
           {ROWS.map(({ before, after }, i) => (
-            <div key={i} style={{
+            <div key={i} className="comp-row" style={{
               display: "grid",
               gridTemplateColumns: "1fr auto 1fr",
               gap: "0 24px",
@@ -154,7 +154,7 @@ export default function TransformationSection() {
               </div>
 
               {/* Flecha */}
-              <div style={{
+              <div className="comp-arrow" style={{
                 display: "flex", alignItems: "center", justifyContent: "center",
                 color: "#334155", fontSize: 18, fontWeight: 700,
               }}>
@@ -188,8 +188,20 @@ export default function TransformationSection() {
 
       <style>{`
         @media (max-width: 640px) {
-          #transformacion .transform-grid {
+          #transformacion .comp-header {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 0 10px !important;
+          }
+          #transformacion .comp-divider {
+            display: none !important;
+          }
+          #transformacion .comp-row {
             grid-template-columns: 1fr !important;
+            gap: 6px 0 !important;
+          }
+          #transformacion .comp-arrow {
+            transform: rotate(90deg);
+            padding: 2px 0;
           }
         }
       `}</style>
