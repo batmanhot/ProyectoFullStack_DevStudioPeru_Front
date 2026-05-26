@@ -108,11 +108,11 @@ export default function TechStack() {
         {/* Encabezado */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
           <h2 className="font-display font-black text-white leading-[1.1] max-w-3xl" style={{ fontSize: "clamp(36px, 5vw, 64px)" }}>
-            Herramientas <span style={{ fontStyle: "italic", background: "linear-gradient(135deg, #38BDF8, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>adecuadas</span><br />
-            para el siguiente nivel.
+            Tecnología diseñada para <span style={{ fontStyle: "italic", background: "linear-gradient(135deg, #38BDF8, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>escalar</span><br />
+            operaciones empresariales.
           </h2>
           <p className="text-slate-400 max-w-md text-[17px] leading-relaxed mb-4">
-            No coleccionamos lenguajes. Seleccionamos el stack óptimo para garantizar escalabilidad, seguridad y velocidad.
+            Seleccionamos arquitecturas modernas y herramientas estratégicas para construir plataformas seguras, escalables y preparadas para crecer.
           </p>
         </div>
 
