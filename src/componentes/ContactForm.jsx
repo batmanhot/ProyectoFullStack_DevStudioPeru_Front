@@ -269,15 +269,15 @@ export default function ContactForm() {
 
           <h2 style={{
             fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900,
-            fontSize: "clamp(36px, 5.5vw, 66px)", color: "#F8FAFC",
+            fontSize: "clamp(32px, 5vw, 62px)", color: "#F8FAFC",
             lineHeight: 1.05, marginBottom: 20, letterSpacing: "-0.04em"
           }}>
-            Tu próximo proyecto<br />
+            Transforma tu negocio con{" "}
             <span style={{
               background: "linear-gradient(135deg, #3B82F6, #38BDF8, #34D399)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"
             }}>
-              empieza aquí.
+              tecnología que crece contigo.
             </span>
           </h2>
 
@@ -285,7 +285,7 @@ export default function ContactForm() {
             fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#64748B",
             fontSize: 19, lineHeight: 1.7, maxWidth: 540, margin: "0 auto"
           }}>
-            Cuéntanos tu idea. Nuestro equipo te responde con una propuesta técnica y económica sin costo.
+            Hablemos sobre cómo automatizar y optimizar tu empresa. Primera consultoría sin costo ni compromiso.
           </p>
         </div>
 

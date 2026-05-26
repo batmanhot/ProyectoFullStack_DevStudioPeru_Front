@@ -4,15 +4,15 @@
 import { useInView } from "../hooks/useInView";
 
 const PILLARS = [
-  { icon: "🎯", title: "Misión", desc: "Cerrar la brecha entre ideas de negocio y tecnología, entregando software e infraestructura que impulsan resultados reales." },
-  { icon: "👁️", title: "Visión",  desc: "Ser el socio tecnológico de referencia en Perú, integrando software e infraestructura en una sola solución de clase mundial." },
+  { icon: "🎯", title: "Misión", desc: "Transformar la operación de empresas mediante tecnología a medida que genera resultados medibles — más eficiencia, menos costos, mayor crecimiento." },
+  { icon: "👁️", title: "Visión",  desc: "Ser el socio estratégico de referencia en Perú para la transformación digital de PYMEs y empresas en crecimiento de LATAM." },
 ];
 
 const WHY_US = [
-  { icon: "🔗", title: "Enfoque Integral",    desc: "Código + infraestructura robusta en un solo equipo." },
-  { icon: "🎨", title: "A tu Medida",         desc: "Cada proyecto diseñado desde cero para tus objetivos." },
-  { icon: "🇵🇪", title: "Raíz Local",          desc: "Conocemos el mercado peruano y ofrecemos soporte directo." },
-  { icon: "✅", title: "Calidad y Rigor",      desc: "Clean Code y estándares de infraestructura en cada entrega." },
+  { icon: "🎯", title: "Enfoque Empresarial",    desc: "Entendemos tu negocio antes de escribir código. Resolvemos procesos, no solo requerimientos técnicos." },
+  { icon: "🔧", title: "Desarrollo a tu Medida", desc: "Cada empresa tiene procesos únicos. Tu sistema se construye desde cero para tus objetivos, no adaptado de plantillas." },
+  { icon: "📈", title: "Soporte y Evolución",    desc: "No entregamos y desaparecemos. Tu sistema crece y evoluciona junto con tu empresa." },
+  { icon: "🇵🇪", title: "Raíz Local, Visión Global", desc: "Conocemos el mercado peruano y latinoamericano. Soporte directo, sin intermediarios ni barreras horarias." },
 ];
 
 export default function AboutSection() {
@@ -52,17 +52,17 @@ export default function AboutSection() {
               fontSize: "clamp(26px,3vw,40px)", color: "#E2E8F0",
               lineHeight: 1.15, marginBottom: 12,
             }}>
-              Tecnología que{" "}
+              Tu socio estratégico en{" "}
               <span style={{
                 background: "linear-gradient(135deg,#3B82F6,#38BDF8)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-              }}>impulsa tu negocio</span>
+              }}>transformación digital</span>
             </h2>
 
             <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: 15, color: "#94A3B8", lineHeight: 1.75, marginBottom: 32 }}>
-              Estudio de tecnología fundado en Lima. Construimos{" "}
-              <strong style={{ color: "#60A5FA" }}>software a medida e infraestructura Cloud</strong>{" "}
-              para empresas peruanas y latinoamericanas que buscan resultados reales.
+              Ayudamos a empresas peruanas y latinoamericanas a{" "}
+              <strong style={{ color: "#60A5FA" }}>digitalizar operaciones, automatizar procesos y crecer</strong>{" "}
+              con tecnología — sin intermediarios, con resultados medibles y soporte directo.
             </p>
 
             {/* Misión / Visión — compactos */}

@@ -28,7 +28,7 @@ export const SERVICES = [
     icon: "🏗️",
     title: "Arquitectura de Software",
     description:
-      "Tu sistema no se caerá cuando tu empresa crezca. Diseñamos la base técnica para que escalar 10× no signifique reescribir desde cero ni detener operaciones.",
+      "Construimos la base tecnológica de tu negocio para que escalar no signifique reescribir desde cero ni detener operaciones. Tu empresa crece — tu sistema la sigue.",
     tags: ["Microservicios", "DDD", "Clean Arch", "API Design"],
     accent: "#6C63FF",
   },
@@ -36,7 +36,7 @@ export const SERVICES = [
     icon: "🌐",
     title: "Desarrollo Web",
     description:
-      "Desde la landing que convierte hasta el SaaS que retiene usuarios. Apps rápidas, accesibles y construidas para generar resultados — no solo para verse bien.",
+      "Desde el sistema que digitaliza tu operación diaria hasta la plataforma que fideliza clientes. Aplicaciones web construidas para generar resultados de negocio, no solo para lucir bien.",
     tags: ["React", "Next.js", "Node.js", "TypeScript"],
     accent: "#3B82F6",
   },
@@ -44,7 +44,7 @@ export const SERVICES = [
     icon: "📱",
     title: "Apps Móviles",
     description:
-      "Apps que los usuarios descargan, usan y no desinstalan. iOS y Android con experiencias fluidas entregadas en un solo ciclo de desarrollo, sin el doble costo.",
+      "Pon tu negocio en el bolsillo de tus clientes y colaboradores. Apps iOS y Android que se usan y no se desinstalan — desarrolladas en un solo ciclo, sin el doble costo ni el doble tiempo.",
     tags: ["React Native", "Flutter", "Expo"],
     accent: "#06B6D4",
   },
@@ -52,7 +52,7 @@ export const SERVICES = [
     icon: "🤖",
     title: "Inteligencia Artificial",
     description:
-      "Integra IA antes de que lo haga tu competencia. LLMs, visión artificial y automatización inteligente que reducen costos operativos y abren nuevas fuentes de ingreso.",
+      "Reduce costos operativos y abre nuevas fuentes de ingreso antes de que lo haga tu competencia. Integramos IA en tus procesos — asistentes inteligentes, análisis predictivo y automatización avanzada.",
     tags: ["OpenAI", "LangChain", "Python", "RAG"],
     accent: "#A78BFA",
   },
@@ -60,7 +60,7 @@ export const SERVICES = [
     icon: "⚡",
     title: "Automatizaciones",
     description:
-      "Cada hora que tu equipo dedica a tareas repetitivas es dinero que se pierde. Automatizamos operaciones y conectamos herramientas para que tu equipo haga solo lo que importa.",
+      "Cada hora que tu equipo dedica a tareas repetitivas es dinero que se pierde. Eliminamos procesos manuales, conectamos tus sistemas y liberamos a tu equipo para enfocarse en lo que realmente genera valor.",
     tags: ["n8n", "Zapier", "RPA", "Webhooks"],
     accent: "#F59E0B",
   },
@@ -68,7 +68,7 @@ export const SERVICES = [
     icon: "☁️",
     title: "Infraestructura & Cloud",
     description:
-      "Migra a la nube sin caídas y sin facturas sorpresa. Infraestructura que escala sola, se recupera sola y en promedio cuesta 30–40% menos que on-premise.",
+      "Lleva tu operación a la nube sin interrupciones ni sorpresas en la factura. Infraestructura que se escala y recupera automáticamente, con un costo promedio 30–40% menor que los servidores tradicionales.",
     tags: ["AWS", "Docker", "Kubernetes", "DevOps"],
     accent: "#10B981",
   },
@@ -158,7 +158,7 @@ export const PROJECTS = [
     category: "Web · Punto de Venta",
     metric: "+180% en ventas",
     description:
-      "Reemplazó tres herramientas separadas con una sola plataforma. Control total de ventas, inventario multi-almacén y reportes en tiempo real para negocios minoristas del Perú.",
+      "Centralizó ventas, inventario y reportes en una sola plataforma, eliminando tres herramientas dispersas. Control total de la operación comercial con visibilidad en tiempo real para negocios minoristas.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     accentColor: "#10B981",
   },
@@ -167,7 +167,7 @@ export const PROJECTS = [
     category: "Móvil · Transportes",
     metric: "iOS & Android · día 1",
     description:
-      "La alternativa local a Uber para mototaxis y taxis en Perú. Matching instantáneo con conductores verificados, GPS en tiempo real, identificación de pasajero y cobros digitales — todo en una sola app lanzada simultáneamente en iOS y Android sin el doble costo.",
+      "Digitalizó el transporte local en Perú con una plataforma de movilidad completa. Matching instantáneo, pagos digitales y GPS en tiempo real — lanzada simultáneamente en iOS y Android sin el doble costo ni tiempo.",
     tags: ["React Native", "Node.js", "Google Maps", "AWS"],
     accentColor: "#6C63FF",
   },
@@ -176,7 +176,7 @@ export const PROJECTS = [
     category: "Web · Logística",
     metric: "−40% tiempo de despacho",
     description:
-      "Redujo el tiempo de despacho un 40% y eliminó errores de inventario. Gestión logística completa para PYMEs — inventario, despachos, transporte y auditoría en una sola plataforma.",
+      "Redujo el tiempo de despacho un 40% y eliminó los errores de inventario que generaban pérdidas. Gestión logística completa — inventario, despachos, transporte y auditoría centralizada en una sola plataforma.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     accentColor: "#F97316",
   },
@@ -185,7 +185,7 @@ export const PROJECTS = [
     category: "CRM · Ventas y Call Center",
     metric: "+35% tasa de conversión",
     description:
-      "CRM para call centers de ventas que mejoró la conversión un 35%. Gestión de clientes, oportunidades y pipelines en múltiples canales con interfaz moderna y adaptable.",
+      "Incrementó la conversión de ventas un 35% al centralizar gestión de clientes, pipelines y comunicación multicanal. Visibilidad completa del embudo comercial para equipos de ventas y call centers.",
     tags: ["React", "TailwindCSS", "WhatsApp API", "Node.js", "MongoDB"],
     accentColor: "#A78BFA",
   },
@@ -194,7 +194,7 @@ export const PROJECTS = [
     category: "Cloud · DevOps",
     metric: "−40% costos de infraestructura",
     description:
-      "Migración de sistemas críticos de una fintech a AWS con cero paradas. Recortó costos de infraestructura un 40% con alta disponibilidad multi-zona y pipelines CI/CD.",
+      "Migró sistemas críticos a AWS con cero interrupciones operativas, reduciendo costos de infraestructura un 40%. Alta disponibilidad multi-zona y despliegues automatizados para una fintech en crecimiento.",
     tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
     accentColor: "#3B82F6",
     nda: true,
@@ -204,7 +204,7 @@ export const PROJECTS = [
     category: "Web · Móvil · Restaurantes",
     metric: "+3x pedidos vs. teléfono",
     description:
-      "Eliminó las llamadas y las demoras. Plataforma digital de pedidos y delivery para restaurante que triplicó los pedidos al pasar a canales digitales — con carta interactiva, pagos en línea y seguimiento de entrega en tiempo real, disponible 24/7.",
+      "Triplicó los pedidos al reemplazar llamadas telefónicas por una plataforma digital disponible 24/7. Carta interactiva, pagos en línea y seguimiento de entrega en tiempo real — digitalización completa del restaurante.",
     tags: ["React", "Node.js", "Firebase", "Stripe"],
     accentColor: "#F59E0B",
   },

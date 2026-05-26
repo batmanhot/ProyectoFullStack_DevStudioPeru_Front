@@ -153,12 +153,12 @@ export default function ServicesSection() {
             marginBottom: 20,
             letterSpacing: "-0.03em"
           }}>
-            Soluciones <span style={{ 
-              background: "linear-gradient(135deg, #60A5FA, #38BDF8)", 
-              WebkitBackgroundClip: "text", 
-              WebkitTextFillColor: "transparent", 
-              backgroundClip: "text" 
-            }}>Digitales</span> de Alto Impacto
+            Soluciones que <span style={{
+              background: "linear-gradient(135deg, #60A5FA, #38BDF8)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text"
+            }}>Transforman</span> tu Negocio
           </h2>
           <p style={{ 
             fontFamily: "'Plus Jakarta Sans', sans-serif", 
@@ -168,7 +168,7 @@ export default function ServicesSection() {
             fontSize: 18, 
             lineHeight: 1.6 
           }}>
-            Dominamos las tecnologías más avanzadas para materializar tus ideas en productos escalables y eficientes.
+            Convertimos los procesos de tu empresa en ventajas competitivas — eficiencia operativa, automatización inteligente y tecnología que crece con tu negocio.
           </p>
         </div>
 

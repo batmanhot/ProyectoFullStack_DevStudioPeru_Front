@@ -175,7 +175,7 @@ export default function Footer() {
               fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, color: "#64748B",
               lineHeight: 1.75, marginBottom: 28, maxWidth: 290,
             }}>
-              Transformamos ideas en software de alto rendimiento. Arquitecturas escalables, productos digitales de clase mundial.
+              Ayudamos a empresas a crecer, automatizar operaciones y digitalizarse con tecnología diseñada para generar resultados reales.
             </p>
 
             {/* Redes sociales */}

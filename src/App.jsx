@@ -8,10 +8,13 @@ import { useScrollY } from "./hooks/useInView";
 
 import Navbar          from "./componentes/Navbar";
 import HeroSection     from "./componentes/HeroSection";
+import ProblemSection  from "./componentes/ProblemSection";
 import ServicesSection from "./componentes/ServicesSection";
-import TechStack       from "./componentes/TechStack";
+import BenefitsSection from "./componentes/BenefitsSection";
 import Portfolio       from "./componentes/Portfolio";
 import Testimonials    from "./componentes/Testimonials";
+import ProcessSection  from "./componentes/ProcessSection";
+import TechStack       from "./componentes/TechStack";
 import ContactForm     from "./componentes/ContactForm";
 import Footer          from "./componentes/Footer";
 
@@ -25,16 +28,19 @@ function LandingPage() {
   return (
     <div style={{ background: "#07091A", minHeight: "100vh" }}>
       <Helmet>
-        <title>DevStudio Perú | Desarrollo Web, Apps Móviles e IA en Lima</title>
-        <meta name="description" content="Estudio de ingeniería de software en Lima, Perú. Desarrollamos web, apps móviles, IA y automatizaciones para PYMEs y startups de LATAM. Precio fijo, entrega real." />
+        <title>DevStudio Perú | Software Empresarial y Transformación Digital en Lima</title>
+        <meta name="description" content="Automatizamos procesos y desarrollamos software empresarial a medida en Lima, Perú. Web, apps móviles e IA para empresas que buscan crecer, reducir costos y ganar eficiencia. Resultados reales." />
       </Helmet>
       <Navbar scrollY={scrollY} />
       <main>
         <HeroSection />
+        <ProblemSection />
         <ServicesSection />
-        <TechStack />
+        <BenefitsSection />
         <Portfolio />
         <Testimonials />
+        <ProcessSection />
+        <TechStack />
         <ContactForm />
       </main>
       <Footer />
